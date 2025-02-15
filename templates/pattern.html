@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Recognition</title>
+    <style>
+        body { background-color: #FFD700; font-family: Arial, sans-serif; text-align: center; }
+        .container { max-width: 600px; margin: auto; padding: 20px; background: white; border-radius: 10px; }
+        .sequence { font-size: 24px; margin-bottom: 10px; }
+        .choice { display: inline-block; margin: 10px; padding: 15px; background: #FFA500; border: none; border-radius: 5px; cursor: pointer; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pattern Recognition</h1>
+        <div id="pattern"></div>
+    </div>
+
+    <script>
+        fetch('/get_patterns')
+        .then(response => response.json())
+        .then(data => {
+            let patternDiv = document.getElementById('pattern');
+            data.forEach(p => {
+                let pDiv = document.createElement('div');
+                pDiv.classList.add('sequence');
+                pDiv.innerHTML = `<p>Sequence: ${p.sequence.join(' - ')} ?</p>
+                    <button class="choice">Square</button>
+                    <button class="choice">Circle</button>`;
+                patternDiv.appendChild(pDiv);
+            });
+        });
+    </script>
+</body>
+</html>
