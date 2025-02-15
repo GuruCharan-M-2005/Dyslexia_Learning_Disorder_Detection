@@ -1,235 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assessment</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        body {
-            background-color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        .container {
-            margin-top: 50px;
-        }
-        .frame {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            width: 50%;
-            margin: auto;
-        }
-        h2 {
-            font-size: 24px;
-            font-weight: bold;
-            color: black;
-        }
-        h3 {
-            font-size: 18px;
-            font-weight: bold;
-        }
-        .subtitle {
-            color: gray;
-        }
-        button {
-            background-color: goldenrod;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: darkgoldenrod;
-        }
-        .question-container {
-            text-align: left;
-            margin-left: 20px;
-        }
-        .option-btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            background: white;
-            border: 2px solid #ccc;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            text-align: left;
-        }
-        .option-btn:hover {
-            background: #f8f8f8;
-        }
-        .option-selected {
-            border: 2px solid goldenrod !important;
-        }
-        .navigation-btns {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .prev-btn {
-            border: 2px solid goldenrod;
-            background: none;
-            color: goldenrod;
-        }
-        .prev-btn:hover {
-            background: #f8f8f8;
-        }
-        .submit-btn {
-            background-color: goldenrod;
-            color: white;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <div class="frame">
-            <div id="start-container">
-                <h2>Let’s Begin the Assessment</h2>
-                <h3 class="subtitle">This will help us understand how you learn best!</h3>
-                <h3>Assessment Activities</h3>
-                <img id="start-image" src="{{ url_for('static', filename='images/assessment.png') }}" alt="Assessment Image">
-                <h3>Choose the Correct Option</h3>
-                <button id="start-btn">Start Test</button>
-            </div>
-
-            <div id="quiz-container" style="display: none;">
-                <h2>Starting Assessment</h2>
-                <h3 class="subtitle">Please follow the instructions carefully</h3>
-                <h3 id="question-number"></h3>
-                <h2 id="question-text" class="question-container"></h2>
-
-                <div id="options-container"></div>
-
-                <div class="navigation-btns">
-                    <button id="prev-btn" class="prev-btn" style="display: none;">Previous</button>
-                    <button id="next-btn">Next</button>
-                </div>
-            </div>
-
-            <div id="result-container" style="display: none;">
-                <h2 id="score-text"></h2>
-                <button onclick="window.location.href='/'">Exit</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        let questions = [];
-        let currentQuestionIndex = 0;
-        let score = 0;
-        let selectedAnswers = {};
-
-        function loadQuestion(index) {
-            let question = questions[index];
-            $("#question-number").text(`Question ${index + 1} of ${questions.length}`);
-            $("#question-text").text(question.question);
-            
-            let optionsHtml = "";
-            for (let i = 1; i <= 4; i++) {
-                let choice = question["choice" + i];
-                let selectedClass = (selectedAnswers[index] === choice) ? "option-selected" : "";
-                optionsHtml += `<button class="option-btn ${selectedClass}" data-choice="${choice}">${choice}</button>`;
-            }
-            $("#options-container").html(optionsHtml);
-
-            // Show/hide previous button
-            if (index === 0) {
-                $("#prev-btn").hide();
-            } else {
-                $("#prev-btn").show();
-            }
-
-            // Change Next to Submit on last question
-            if (index === questions.length - 1) {
-                $("#next-btn").text("Submit").addClass("submit-btn");
-            } else {
-                $("#next-btn").text("Next").removeClass("submit-btn");
-            }
-        }
-
-        $(document).ready(function() {
-            // Start Button Click
-            $("#start-btn").click(function() {
-                $("#start-container").hide();
-                $("#quiz-container").show();
-
-                $.getJSON("/get_questions", function(data) {
-                    questions = data;
-                    loadQuestion(currentQuestionIndex);
-                });
-            });
-
-            // Click on an option
-            $(document).on("click", ".option-btn", function() {
-                $(".option-btn").removeClass("option-selected"); // Remove previous selection
-                $(this).addClass("option-selected"); // Highlight selected
-
-                let selectedChoice = $(this).attr("data-choice");
-                selectedAnswers[currentQuestionIndex] = selectedChoice;
-            });
-
-            // Next Button
-            $("#next-btn").click(function() {
-                if (!selectedAnswers[currentQuestionIndex]) {
-                    alert("Please select an option before proceeding.");
-                    return;
-                }
-
-                currentQuestionIndex++;
-
-                if (currentQuestionIndex < questions.length) {
-                    loadQuestion(currentQuestionIndex);
-                } else {
-                    $("#quiz-container").hide();
-                    evaluateScore();
-                }
-            });
-
-            // Previous Button
-            $("#prev-btn").click(function() {
-                if (currentQuestionIndex > 0) {
-                    currentQuestionIndex--;
-                    loadQuestion(currentQuestionIndex);
-                }
-            });
-        });
-
-        function evaluateScore() {
-            score = 0;
-            questions.forEach((q, i) => {
-                if (selectedAnswers[i] === q.answer) {
-                    score++;
-                }
-            });
-
-            let resultText = `Your Score: ${score}<br>`;
-            if (score <= 4) {
-                resultText += "<b>High Dyslexia - Treatment Required</b>";
-            } else if (score <= 7) {
-                resultText += "<b>Low Dyslexia (Early Stage)</b>";
-            } else {
-                resultText += "<b>No Dyslexia</b>";
-            }
-
-            $("#score-text").html(resultText);
-            $("#result-container").show();
-        }
-    </script>
-
-</body>
-</html> -->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -302,6 +70,9 @@
         #quiz-container{
             min-height: 90vh
         }
+        #result-container{
+            min-height: 50vh
+        }
         .option-btn:hover {
             background: #f8f8f8;
         }
@@ -372,9 +143,12 @@
             </div>
 
             <!-- Result Page -->
-            <div id="result-container" style="display: none;">
-                <h2 id="score-text"></h2>
-                <button id="start-btn" onclick="window.location.href='/'">Exit</button>
+            <div id="result-container" style="display: none; ">
+                <h2 id="score-text" style="margin-top: 250px;"></h2>
+                <div style="display: flex; justify-content: center; gap: 10px;">
+                    <button id="start-btn" onclick="window.location.href='/'">Exit</button>
+                    <button id="start-btn" onclick="restartQuiz()">Retry</button>
+                </div>
             </div>
         </div>
     </div>
@@ -469,6 +243,14 @@
                 }
             });
         });
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            selectedAnswers = {};
+            $("#result-container").hide();
+            $("#quiz-container").show();
+            loadQuestion(currentQuestionIndex);
+        }
     </script>
 
 </body>
