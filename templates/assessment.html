@@ -102,7 +102,6 @@
             border: none;
             padding: 10px 20px;
             cursor: pointer;
-            /* position: fixed; */
             border-radius: 5px;
             font-size: 16px;
         }
@@ -118,7 +117,6 @@
 
     <div class="container">
         <div class="frame">
-            <!-- Start Page -->
             <div id="start-page">
                 <h2>Let’s Begin the Assessment</h2>
                 <h3>This will help us understand how you learn best!</h3>
@@ -128,7 +126,6 @@
                 <button id="start-btn">Start Test</button>
             </div>
 
-            <!-- Assessment Page -->
             <div id="quiz-container" style="display: none;">
                 <h2>Starting Assessment</h2>
                 <h3>Please follow the instructions carefully</h3>
@@ -142,7 +139,6 @@
                 </div>
             </div>
 
-            <!-- Result Page -->
             <div id="result-container" style="display: none; ">
                 <h2 id="score-text" style="margin-top: 250px;"></h2>
                 <div style="display: flex; justify-content: center; gap: 10px;">
@@ -172,10 +168,8 @@
             }
             $("#options-container").html(optionsHtml);
 
-            // Show/hide previous button
             $("#prev-btn").toggle(index > 0);
 
-            // Change Next to Submit on last question
             if (index === questions.length - 1) {
                 $("#next-btn").text("Submit").addClass("submit-btn");
             } else {
@@ -219,7 +213,6 @@
                     currentQuestionIndex++;
                     loadQuestion(currentQuestionIndex);
                 } else {
-                    // Calculate Score
                     score = 0;
                     questions.forEach((q, i) => {
                         if (selectedAnswers[i] === q.answer) {

@@ -3,7 +3,6 @@ import random
 
 app = Flask(__name__)
 
-# JSON data for assessment questions
 questions = [
     {"question": "What is 2 + 2?", "choice1": "3", "choice2": "4", "choice3": "5", "choice4": "6", "answer": "4"},
     {"question": "Which is a fruit?", "choice1": "Carrot", "choice2": "Apple", "choice3": "Cabbage", "choice4": "Potato", "answer": "Apple"},
@@ -28,7 +27,6 @@ questions = [
 ]
 
 
-# JSON data for pattern recognition
 patterns = [
     {"sequence": ["square", "circle", "square", "dash"], "answer": "square"},
     {"sequence": ["circle", "square", "circle", "square"], "answer": "circle"},
@@ -36,26 +34,6 @@ patterns = [
     {"sequence": ["dash", "dash", "circle", "dash"], "answer": "circle"},
     {"sequence": ["square", "square", "circle", "square"], "answer": "circle"}
 ]
-
-@app.route('/evaluate', methods=['POST'])
-def evaluate():
-    data = request.json  # Get answers from frontend
-    user_answers = data.get("answers", [])
-
-    score = 0
-    for i, user_answer in enumerate(user_answers):
-        if user_answer == questions[i]["answer"]:  # Ensure exact match
-            score += 1
-
-    # Determine dyslexia level
-    if score <= 4:
-        result = "High Dyslexia - Treatment Required"
-    elif score <= 7:
-        result = "Low Dyslexia (Early Stage)"
-    else:
-        result = "No Dyslexia"
-
-    return jsonify({"score": score, "result": result})
 
 
 @app.route('/')
