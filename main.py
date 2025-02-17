@@ -48,6 +48,10 @@ def assessment():
 def pattern_recognition():
     return render_template('pattern.html')
 
+@app.route('/reading')
+def reading():
+    return render_template('reading.html')
+
 @app.route('/get_questions')
 def get_questions():
     shuffled_questions = random.sample(questions, 10)
@@ -60,3 +64,4 @@ def get_questions():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
