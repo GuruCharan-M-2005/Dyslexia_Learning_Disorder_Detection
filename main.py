@@ -27,13 +27,13 @@ questions = [
 ]
 
 
-patterns = [
-    {"sequence": ["square", "circle", "square", "dash"], "answer": "square"},
-    {"sequence": ["circle", "square", "circle", "square"], "answer": "circle"},
-    {"sequence": ["triangle", "square", "triangle", "circle"], "answer": "triangle"},
-    {"sequence": ["dash", "dash", "circle", "dash"], "answer": "circle"},
-    {"sequence": ["square", "square", "circle", "square"], "answer": "circle"}
-]
+# patterns = [
+#     {"sequence": ["square", "circle", "square", "dash"], "answer": "square"},
+#     {"sequence": ["circle", "square", "circle", "square"], "answer": "circle"},
+#     {"sequence": ["triangle", "square", "triangle", "circle"], "answer": "triangle"},
+#     {"sequence": ["dash", "dash", "circle", "dash"], "answer": "circle"},
+#     {"sequence": ["square", "square", "circle", "square"], "answer": "circle"}
+# ]
 
 
 @app.route('/')
@@ -53,10 +53,10 @@ def get_questions():
     shuffled_questions = random.sample(questions, 10)
     return jsonify(shuffled_questions)
 
-@app.route('/get_patterns')
-def get_patterns():
-    selected_pattern = random.choice(patterns)
-    return jsonify(selected_pattern)
+# @app.route('/get_patterns')
+# def get_patterns():
+#     selected_pattern = random.choice(patterns)
+#     return jsonify(selected_pattern)
 
 if __name__ == '__main__':
     app.run(debug=True)
