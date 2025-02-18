@@ -4,27 +4,38 @@ import random
 app = Flask(__name__)
 
 questions = [
-    {"question": "What is 2 + 2?", "choice1": "3", "choice2": "4", "choice3": "5", "choice4": "6", "answer": "4"},
-    {"question": "Which is a fruit?", "choice1": "Carrot", "choice2": "Apple", "choice3": "Cabbage", "choice4": "Potato", "answer": "Apple"},
-    {"question": "What color is the sky?", "choice1": "Red", "choice2": "Blue", "choice3": "Green", "choice4": "Yellow", "answer": "Blue"},
-    {"question": "How many legs does a dog have?", "choice1": "2", "choice2": "4", "choice3": "6", "choice4": "8", "answer": "4"},
-    {"question": "What is the capital of France?", "choice1": "Berlin", "choice2": "Madrid", "choice3": "Paris", "choice4": "Rome", "answer": "Paris"},
-    {"question": "Which is a primary color?", "choice1": "Purple", "choice2": "Red", "choice3": "Brown", "choice4": "Pink", "answer": "Red"},
-    {"question": "What animal says 'Meow'?", "choice1": "Dog", "choice2": "Cat", "choice3": "Bird", "choice4": "Cow", "answer": "Cat"},
-    {"question": "How many days are in a week?", "choice1": "5", "choice2": "6", "choice3": "7", "choice4": "8", "answer": "7"},
-    {"question": "What is 10 - 3?", "choice1": "5", "choice2": "7", "choice3": "8", "choice4": "6", "answer": "7"},
-    {"question": "What do bees make?", "choice1": "Milk", "choice2": "Honey", "choice3": "Jam", "choice4": "Cheese", "answer": "Honey"},
-    {"question": "How many sides does a triangle have?", "choice1": "2", "choice2": "3", "choice3": "4", "choice4": "5", "answer": "3"},
-    {"question": "Which is a domestic animal?", "choice1": "Tiger", "choice2": "Lion", "choice3": "Dog", "choice4": "Elephant", "answer": "Dog"},
-    {"question": "How many fingers are on one hand?", "choice1": "3", "choice2": "4", "choice3": "5", "choice4": "6", "answer": "5"},
-    {"question": "Which shape has four equal sides?", "choice1": "Rectangle", "choice2": "Square", "choice3": "Triangle", "choice4": "Circle", "answer": "Square"},
-    {"question": "What is the opposite of 'Hot'?", "choice1": "Cold", "choice2": "Warm", "choice3": "Soft", "choice4": "Hard", "answer": "Cold"},
-    {"question": "How many wheels does a bicycle have?", "choice1": "1", "choice2": "2", "choice3": "3", "choice4": "4", "answer": "2"},
-    {"question": "Which is a mode of transport?", "choice1": "Apple", "choice2": "Car", "choice3": "Chair", "choice4": "Spoon", "answer": "Car"},
-    {"question": "Which month has 28 or 29 days?", "choice1": "January", "choice2": "February", "choice3": "March", "choice4": "April", "answer": "February"},
-    {"question": "Which is a farm animal?", "choice1": "Shark", "choice2": "Cow", "choice3": "Whale", "choice4": "Snake", "answer": "Cow"},
-    {"question": "What is 5 + 3?", "choice1": "6", "choice2": "7", "choice3": "8", "choice4": "9", "answer": "8"}
+    {"image":"https://tse1.mm.bing.net/th?id=OIP.iKEdZsVGxxPHhKA9pJ1gHgHaHZ&pid=Api&P=0&h=180","question": "What color is the sun?", "choice1": "Yellow", "choice2": "Blue", "choice3": "Green", "choice4": "Red", "answer": "Yellow"},
+    {"image":"https://tse3.mm.bing.net/th?id=OIP.TzP2op3lkhlTh6oOHamacAHaHa&pid=Api&P=0&h=180","question": "What sound does a cat make?", "choice1": "Woof", "choice2": "Meow", "choice3": "Moo", "choice4": "Quack", "answer": "Meow"},
+    {"image":"https://tse3.mm.bing.net/th?id=OIP.gJq0aSbv2Gxu7mtckG3PfgHaFX&pid=Api&P=0&h=180","question": "Which is a fruit?", "choice1": "Apple", "choice2": "Carrot", "choice3": "Broccoli", "choice4": "Potato", "answer": "Apple"},
+    {"image":"https://tse2.mm.bing.net/th?id=OIP.jln6a9t6OfNrNJWVlQiS9gHaHa&pid=Api&P=0&h=180","question": "What number comes after 2?", "choice1": "1", "choice2": "3", "choice3": "5", "choice4": "0", "answer": "3"},
+    {"image":"https://tse1.mm.bing.net/th?id=OIP.ESnKED-YaJF652_mDB7pgwHaIC&pid=Api&P=0&h=180","question": "How many eyes do you have?", "choice1": "1", "choice2": "2", "choice3": "3", "choice4": "4", "answer": "2"},
+    {"image":"https://tse4.mm.bing.net/th?id=OIP.suufGLOuyD8Ge6iYG_2xHwHaEe&pid=Api&P=0&h=180","question": "Which animal barks?", "choice1": "Cat", "choice2": "Dog", "choice3": "Cow", "choice4": "Duck", "answer": "Dog"},
+    {"image":"https://tse4.mm.bing.net/th?id=OIP.yldbxZVxOCK5KIDbQhmIGgHaJR&pid=Api&P=0&h=180","question": "What color are bananas?", "choice1": "Red", "choice2": "Blue", "choice3": "Yellow", "choice4": "Green", "answer": "Yellow"},
+    {"image":"https://easydrawingart.com/wp-content/uploads/2019/08/How-to-draw-a-human-2.jpg","question": "How many hands do you have?", "choice1": "2", "choice2": "4", "choice3": "6", "choice4": "1", "answer": "2"},
+    {"image":"https://tse2.mm.bing.net/th?id=OIP.8-k5MhblTFcab2B44CrL6gHaEK&pid=Api&P=0&h=180","question": "Which is bigger, an elephant or a mouse?", "choice1": "Elephant", "choice2": "Mouse", "choice3": "Same size", "choice4": "Fish", "answer": "Elephant"},
+    {"image":"https://tse3.mm.bing.net/th?id=OIP.yfeFjc5iO5yC6A_sQ2Xm7AAAAA&pid=Api&P=0&h=180","question": "Where do fish live?", "choice1": "Sky", "choice2": "Water", "choice3": "Land", "choice4": "Tree", "answer": "Water"},
+    {"image":"https://tse1.mm.bing.net/th?id=OIP.zN_vo1rdpxYUM1MrvfEeuAHaHa&pid=Api&P=0&h=180","question": "What sound does a cow make?", "choice1": "Moo", "choice2": "Meow", "choice3": "Woof", "choice4": "Quack", "answer": "Moo"},
+    {"image":"https://tse2.mm.bing.net/th?id=OIP.pFKRhQ-BV60LU6FUBu6_AQHaHa&pid=Api&P=0&h=180","question": "What color is grass?", "choice1": "Green", "choice2": "Blue", "choice3": "Purple", "choice4": "Red", "answer": "Green"},
+    {"image":"https://tse4.mm.bing.net/th?id=OIP.6iV7cFgtEGCDYJ50I5n61wHaF9&pid=Api&P=0&h=180","question": "Which is a vegetable?", "choice1": "Apple", "choice2": "Carrot", "choice3": "Banana", "choice4": "Orange", "answer": "Carrot"},
+    {"image":"https://tse4.mm.bing.net/th?id=OIP.YBPQgHYo0blhl-Y_cs37qQHaE7&pid=Api&P=0&h=180","question": "What do you use to eat soup?", "choice1": "Fork", "choice2": "Spoon", "choice3": "Knife", "choice4": "Plate", "answer": "Spoon"},
+    {"image":"https://tse4.mm.bing.net/th?id=OIP.oX4TFbay100bTuNNjhdQ6gHaHa&pid=Api&P=0&h=180","question": "What shape is a ball?", "choice1": "Square", "choice2": "Triangle", "choice3": "Circle", "choice4": "Rectangle", "answer": "Circle"},
+    {"image":"https://tse4.mm.bing.net/th?id=OIP.T544Qdf-lY8u-zm_69RyDwAAAA&pid=Api&P=0&h=180","question": "What do you wear on your feet?", "choice1": "Hat", "choice2": "Shoes", "choice3": "Gloves", "choice4": "Socks", "answer": "Shoes"},
+    {"image":"https://tse4.mm.bing.net/th?id=OIP.UgsQBApUUtGAhdgt-WIfQgHaHa&pid=Api&P=0&h=180","question": "Which is a color?", "choice1": "Table", "choice2": "Red", "choice3": "House", "choice4": "Toy", "answer": "Red"},
+    {"image":"https://tse1.mm.bing.net/th?id=OIP.Ib6DOQ3PoqdYhFw85J_TrgHaEW&pid=Api&P=0&h=180","question": "What animal says 'Moo'?", "choice1": "Sheep", "choice2": "Cat", "choice3": "Cow", "choice4": "Dog", "answer": "Cow"},
+    {"image":"https://tse3.mm.bing.net/th?id=OIP.SGCPAwcc6yudCZC2-SB_ywHaHw&pid=Api&P=0&h=180","question": "What do you use to brush your teeth?", "choice1": "Comb", "choice2": "Toothbrush", "choice3": "Spoon", "choice4": "Shampoo", "answer": "Toothbrush"},
+    {"image":"https://tse4.mm.bing.net/th?id=OIP.CIac5BAbYhrvBddLTcoNxAHaEW&pid=Api&P=0&h=180","question": "How many wheels does a car have?", "choice1": "2", "choice2": "3", "choice3": "4", "choice4": "5", "answer": "4"},
+    {"image":"https://tse3.mm.bing.net/th?id=OIP.Or3DuhEPAGJVUH5jPbnsgQHaFV&pid=Api&P=0&h=180","question": "What is the opposite of 'Up'?", "choice1": "Down", "choice2": "Left", "choice3": "Right", "choice4": "Straight", "answer": "Down"},
+    {"image":"https://tse3.mm.bing.net/th?id=OIP.7kUDPX3-LPUlLWdHElG1GAHaF7&pid=Api&P=0&h=180","question": "What is 1 + 1?", "choice1": "1", "choice2": "2", "choice3": "3", "choice4": "4", "answer": "2"},
+    {"image":"https://helpingwithmath.com/wp-content/uploads/2022/03/image-109.png","question": "Which shape has four equal sides?", "choice1": "Triangle", "choice2": "Rectangle", "choice3": "Circle", "choice4": "Square", "answer": "Square"},
+    {"image":"https://tse2.mm.bing.net/th?id=OIP.ZfuC4RnPRyyKHJ9co6w-PQHaFS&pid=Api&P=0&h=180","question": "How many legs does a dog have?", "choice1": "2", "choice2": "4", "choice3": "6", "choice4": "8", "answer": "4"},
+    {"image":"https://tse3.mm.bing.net/th?id=OIP.7kUDPX3-LPUlLWdHElG1GAHaF7&pid=Api&P=0&h=180","question": "What number comes after 5?", "choice1": "3", "choice2": "6", "choice3": "7", "choice4": "8", "answer": "6"},
+    {"image":"https://tse3.mm.bing.net/th?id=OIP.2_9yJhkcUr2y9KkFhlHJ-wHaEx&pid=Api&P=0&h=180","question": "What is the opposite of 'Hot'?", "choice1": "Cold", "choice2": "Warm", "choice3": "Soft", "choice4": "Hard", "answer": "Cold"},
+    {"image":"https://tse3.mm.bing.net/th?id=OIP.7kUDPX3-LPUlLWdHElG1GAHaF7&pid=Api&P=0&h=180","question": "What is 10 - 3?", "choice1": "5", "choice2": "7", "choice3": "8", "choice4": "6", "answer": "7"},
+    {"image":"https://tse2.mm.bing.net/th?id=OIP.OPmWmIwjFejQUyTwfiMkyAHaD4&pid=Api&P=0&h=180","question": "Which is a primary color?", "choice1": "Purple", "choice2": "Red", "choice3": "Brown", "choice4": "Pink", "answer": "Red"},
+    {"image":"https://tse2.mm.bing.net/th?id=OIP.wOTei2g-Ch2wuzPScyyu5wHaLH&pid=Api&P=0&h=180","question": "What is the capital of France?", "choice1": "Berlin", "choice2": "Madrid", "choice3": "Paris", "choice4": "Rome", "answer": "Paris"},
+    {"image":"https://tse1.mm.bing.net/th?id=OIP.CvEbtxW39FjKR7jdNICIUwAAAA&pid=Api&P=0&h=180","question": "Which month has 28 or 29 days?", "choice1": "January", "choice2": "February", "choice3": "March", "choice4": "April", "answer": "February"}
 ]
+
 
 
 # patterns = [
@@ -54,8 +65,9 @@ def reading():
 
 @app.route('/get_questions')
 def get_questions():
-    shuffled_questions = random.sample(questions, 10)
-    return jsonify(shuffled_questions)
+    # shuffled_questions = random.sample(questions, 10)
+    # return jsonify(shuffled_questions)
+    return jsonify(questions)
 
 # @app.route('/get_patterns')
 # def get_patterns():
