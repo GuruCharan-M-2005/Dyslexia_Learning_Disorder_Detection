@@ -3,183 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pattern Recognition Test</title>
+    <title>Pattern Assessment</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-        .pattern-class {
+        .pattern-body {
+            background-color: white;
             font-family: Arial, sans-serif;
-            background-color: #fff;
-            margin: 0;
-            padding: 0;
             text-align: center;
         }
-
-        .main-container {
-            max-width: 400px;
-            margin: 50px auto;
+        
+        .frame {
+            background: white;
             padding: 20px;
             border-radius: 10px;
-            background-color: #f9f9f9;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            margin: auto;
+            text-align: center;
+            min-height: 650px;
         }
 
-        .pattern-class h2 {
-            font-size: 24px;
+        .question-container {
+            font-size: 20px;
+            color:  gray;
             font-weight: bold;
-            text-align: left;
+            margin-bottom: 20px;
         }
 
-        .test-info {
-            font-size: 14px;
-            text-align: left;
-            margin-bottom: 10px;
-        }
-
-        .pattern-class p {
-            margin-top: 40px;
-            font-size: 16px;
-        }
-
-        .pattern-sequence {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+        .sequence {
+            font-size: 30px;
             margin: 15px 0;
         }
 
-        .pattern {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: bold;
-            background-color: #ffb700;
-            border-radius: 5px;
-        }
-
-        .options {
+        .options-container {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             gap: 10px;
-            margin-top: 20px;
         }
 
         .option-btn {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #ffb700;
-            border: none;
-            cursor: pointer;
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid gray;
             border-radius: 5px;
-            transition: background 0.3s;
+            cursor: pointer;
+            transition: 0.3s;
+            background: white;
+            width: 120px;
         }
 
         .option-btn:hover {
-            background-color: #e69e00;
+            border-color: goldenrod;
+            background: #fff8dc;
         }
 
-        .result-container {
-            display: none;
-            text-align: center;
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #f9f9f9;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        .selected {
+            border-color: goldenrod !important;
+            background: #fff8dc !important;
         }
 
-        .result-container img {
-            width: 200px;
+        .btn-container {
+            margin-left: 80px;
             margin-top: 20px;
+            display: flex;
+            gap: 25px;
         }
 
-        .head {
-            background-color: #e69e00;
-            padding: 10px;
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        .message {
+        .nav-btn {
+            padding: 10px 20px;
             font-size: 18px;
+            background-color: goldenrod;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .nav-btn:hover {
+            background-color: darkgoldenrod;
+        }
+
+        #start-btn {
+            font-size: 20px;
+            padding: 10px 15px;
+        }
+
+        .main-text {
+            font-size: 22px;
             font-weight: bold;
             margin-top: 10px;
+            color:  gray;
         }
 
-        .btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: #ffb700;
-            text-decoration: none;
+        .image-container img {
+            width: 100%;
+            margin-top: 10px;
             border-radius: 5px;
-            color: black;
-            font-size: 16px;
-        }
-
-        .btn:hover {
-            background-color: #e69e00;
         }
     </style>
 </head>
-<body class="pattern-class">
-
-    <div class="main-container" id="test-container">
-        <h2>Assessment Tests</h2>
-        <div class="test-info">
-            <span class="element">Current Test: Pattern Recognition</span>
+<body class="pattern-body">
+    <div id="front-page" class="frame">
+        <h2>Welcome to the Pattern Assessment</h2>
+        <p class="main-text">Test your ability to recognize patterns.</p>
+        <div class="image-container">
+            <img src="pattern_intro.jpg" alt="Pattern Introduction">
         </div>
-        <p>Select the next pattern in the sequence:</p>
-
-        <div class="pattern-sequence">
-            <div class="pattern">⬛</div>
-            <div class="pattern">⚫</div>
-            <div class="pattern">⬛</div>
-            <div class="pattern">?</div>
-        </div>
-
-        <div class="options">
-            <button type="button" class="option-btn" onclick="checkAnswer('square')">⬛ Square</button>
-            <button type="button" class="option-btn" onclick="checkAnswer('circle')">⚫ Circle</button>
+        <button id="start-btn" class="nav-btn">Start</button>
+    </div>
+    <div id="quiz-container" class="frame" style="display: none;">
+        <h2>Pattern Assessment</h2>
+        <p id="instruction-text" style="font-weight: bold; color: #777; display: none; font-size: 20px;">
+            Follow the Instruction and Answer correctly
+        </p>
+        <div id="question-container" class="question-container"></div>
+        <div id="sequence" class="sequence"></div>
+        <div id="options-container" class="options-container"></div>
+        <div class="btn-container">
+            <button id="prev-btn" class="nav-btn" style="display: none;">Previous</button>
+            <button id="next-btn" class="nav-btn">Next</button>
         </div>
     </div>
-
-    <div class="result-container" id="result-container">
-        <h1 class="head">Your Result:</h1>
-        <img id="result-image" src="" alt="Result GIF">
-        <h1 id="result-message" class="message"></h1>
-        <a href="javascript:resetTest()" class="btn">Try Another</a>
+    <div id="result-page" class="frame" style="display: none;">
+        <h2>Assessment Completed!</h2>
+        <p id="score-text"></p>
+        <div class="image-container">
+            <img src="score_image.jpg" alt="Score Result">
+        </div>
+        <button id="restart-btn" class="nav-btn">Restart</button>
+        <button id="exit-btn" class="nav-btn" onclick="window.location.href='/home'">Exit</button>
     </div>
 
     <script>
-        function checkAnswer(userAnswer) {
-            let correctAnswer = "circle"; 
-            let resultContainer = document.getElementById("result-container");
-            let testContainer = document.getElementById("test-container");
-            let resultMessage = document.getElementById("result-message");
-            let resultImage = document.getElementById("result-image");
+        let questions = [];
+        let currentIndex = 0;
+        let selectedAnswers = {};
+        let score = 0;
 
-            if (userAnswer === correctAnswer) {
-                resultMessage.innerHTML = "🎉 Well Done!";
-                resultMessage.style.color = "green";
-                resultImage.src = "static/images/Correct.gif";
-            } else {
-                resultMessage.innerHTML = "❌ Try Again!";
-                resultMessage.style.color = "red";
-                resultImage.src = "static/images/Wrong.gif";
+        function fetchQuestions() {
+            $.ajax({
+                url: '/get_patterns',
+                method: 'GET',
+                success: function(data) {
+                    questions = data;
+                    loadQuestion(currentIndex);
+                },
+                error: function(error) {
+                    console.error("Error fetching questions:", error);
+                }
+            });
+        }
+        function loadQuestion(index) {
+            let question = questions[index];
+            $("#question-container").text(question.question);
+            $("#sequence").html(question.sequence.join(" "));
+            $("#options-container").html("");
+
+            for (let key in question.options) {
+                let selectedClass = selectedAnswers[index] === key ? "selected" : "";
+                $("#options-container").append(
+                    `<button class="option-btn ${selectedClass}" data-choice="${key}">${question.options[key]}</button>`
+                );
             }
- 
-            testContainer.style.display = "none";
-            resultContainer.style.display = "block";
+            if (index === 0) {
+                $("#instruction-text").show();
+                $("#prev-btn").hide(); 
+            } else {
+                $("#instruction-text").hide();
+                $("#prev-btn").show();
+            }
+            $("#next-btn").text(index === questions.length - 1 ? "Submit" : "Next");
         }
+        $(document).ready(function() {
+            $("#start-btn").click(function() {
+                $("#front-page").hide();
+                $("#quiz-container").show();
+                fetchQuestions();
+            });
+            $(document).on("click", ".option-btn", function() {
+                $(".option-btn").removeClass("selected");
+                $(this).addClass("selected");
+                selectedAnswers[currentIndex] = $(this).data("choice");
+            });
+            $("#next-btn").click(function() {
+                if (!selectedAnswers[currentIndex]) {
+                    alert("Please select an option before proceeding.");
+                    return;
+                }
 
-        function resetTest() {
-            document.getElementById("test-container").style.display = "block";
-            document.getElementById("result-container").style.display = "none";
-        }
+                if (currentIndex < questions.length - 1) {
+                    currentIndex++;
+                    loadQuestion(currentIndex);
+                } else {
+                    score = 0;
+                    questions.forEach((q, i) => {
+                        if (selectedAnswers[i] === q.answer) {
+                            score++;
+                        }
+                    });
+
+                    $("#quiz-container").hide();
+                    $("#result-page").show();
+                    $("#score-text").text(`You scored ${score} out of ${questions.length}`);
+                }
+            });
+            $("#prev-btn").click(function() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    loadQuestion(currentIndex);
+                }
+            });
+            $("#restart-btn").click(function() {
+                currentIndex = 0;
+                selectedAnswers = {};
+                score = 0;
+                $("#result-page").hide();
+                $("#front-page").show();
+            });
+        });
     </script>
 
 </body>

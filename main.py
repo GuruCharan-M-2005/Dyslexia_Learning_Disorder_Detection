@@ -38,13 +38,24 @@ questions = [
 
 
 
-# patterns = [
-#     {"sequence": ["square", "circle", "square", "dash"], "answer": "square"},
-#     {"sequence": ["circle", "square", "circle", "square"], "answer": "circle"},
-#     {"sequence": ["triangle", "square", "triangle", "circle"], "answer": "triangle"},
-#     {"sequence": ["dash", "dash", "circle", "dash"], "answer": "circle"},
-#     {"sequence": ["square", "square", "circle", "square"], "answer": "circle"}
-# ]
+patterns = [
+   {"question": "Select the next pattern in the sequence:", "sequence": ["⬛", "⚫", "⬛", "?"], "options": {"square": "⬛ Square", "circle": "⚫ Circle"}, "answer": "circle"},
+    {"question": "Which shape comes next?", "sequence": ["🔺", "🔵", "🔺", "?"], "options": {"triangle": "🔺 Triangle", "circle": "🔵 Circle"}, "answer": "circle"},
+    {"question": "Pick the correct pattern:", "sequence": ["🟢", "🟡", "🟢", "?"], "options": {"green": "🟢 Green", "yellow": "🟡 Yellow"}, "answer": "yellow"},
+    {"question": "What comes next?", "sequence": ["🟥", "🟨", "🟥", "?"], "options": {"red": "🟥 Red", "yellow": "🟨 Yellow"}, "answer": "yellow"},
+    {"question": "Identify the pattern:", "sequence": ["🔶", "🔷", "🔶", "?"], "options": {"diamond": "🔷 Diamond", "hexagon": "🔶 Hexagon"}, "answer": "diamond"},
+    {"question": "Next shape?", "sequence": ["🔵", "🔴", "🔵", "?"], "options": {"blue": "🔵 Blue", "red": "🔴 Red"}, "answer": "red"},
+    {"question": "Complete the sequence:", "sequence": ["⬜", "⬛", "⬜", "?"], "options": {"white": "⬜ White", "black": "⬛ Black"}, "answer": "black"},
+    {"question": "What follows?", "sequence": ["🟧", "🟦", "🟧", "?"], "options": {"orange": "🟧 Orange", "blue": "🟦 Blue"}, "answer": "blue"},
+    {"question": "Guess the missing shape:", "sequence": ["🟠", "🟣", "🟠", "?"], "options": {"purple": "🟣 Purple", "orange": "🟠 Orange"}, "answer": "purple"},
+    {"question": "Find the next pattern:", "sequence": ["⬜", "⬛", "⬛", "⬜", "⬜", "?"], "options": {"black": "⬛ Black", "white": "⬜ White"}, "answer": "black"},
+    {"question": "What is the missing shape?", "sequence": ["🔺", "🔻", "🔺", "?"], "options": {"up": "🔺 Up Triangle", "down": "🔻 Down Triangle"}, "answer": "down"},
+    {"question": "Choose the correct pattern:", "sequence": ["🟥", "🟩", "🟦", "?"], "options": {"blue": "🟦 Blue", "green": "🟩 Green"}, "answer": "green"},
+    {"question": "Complete the set:", "sequence": ["🟤", "⚪", "🟤", "?"], "options": {"white": "⚪ White", "brown": "🟤 Brown"}, "answer": "white"},
+    {"question": "Identify the missing pattern:", "sequence": ["🟪", "🟨", "🟪", "?"], "options": {"yellow": "🟨 Yellow", "purple": "🟪 Purple"}, "answer": "yellow"},
+    {"question": "Which shape continues the pattern?", "sequence": ["🟢", "🟠", "🟢", "?"], "options": {"green": "🟢 Green", "orange": "🟠 Orange"}, "answer": "orange"}
+]
+
 
 
 @app.route('/')
@@ -55,13 +66,17 @@ def home():
 def assessment():
     return render_template('assessment.html')
 
-@app.route('/pattern_recognition')
-def pattern_recognition():
-    return render_template('pattern.html')
+@app.route('/pattern')
+def pattern():
+    return render_template("pattern.html")
 
 @app.route('/reading')
 def reading():
     return render_template('reading.html')
+
+@app.route('/landing')
+def landing():
+    return render_template('landing.html')
 
 @app.route('/get_questions')
 def get_questions():
@@ -69,10 +84,11 @@ def get_questions():
     # return jsonify(shuffled_questions)
     return jsonify(questions)
 
-# @app.route('/get_patterns')
-# def get_patterns():
-#     selected_pattern = random.choice(patterns)
-#     return jsonify(selected_pattern)
+@app.route('/get_patterns')
+def get_paterns():
+    shuffled_questions = random.sample(patterns, 5)
+    return jsonify(shuffled_questions)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
