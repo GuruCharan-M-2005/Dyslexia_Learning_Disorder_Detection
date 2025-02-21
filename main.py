@@ -78,6 +78,10 @@ def reading():
 def landing():
     return render_template('landing.html')
 
+@app.route('/onboarding')
+def onboarding():
+    return render_template('onboarding.html')
+
 @app.route('/get_questions')
 def get_questions():
     # shuffled_questions = random.sample(questions, 10)
