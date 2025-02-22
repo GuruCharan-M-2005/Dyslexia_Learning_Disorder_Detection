@@ -57,6 +57,39 @@ patterns = [
 ]
 
 
+users = [
+    {
+        "username": "spacece",
+        "email": "spacece@gmail.com",
+        "password": "spacece"
+    },
+]
+
+
+def get_suggestions(score):
+    if score <= 1:
+        return [
+            "Consult a professional for further assessment.",
+            "Engage in structured reading activities.",
+            "Use text-to-speech tools for better comprehension.",
+        ]
+    elif score <= 3:
+        return [
+            "Encourage more reading practice with engaging stories.",
+            "Break reading tasks into smaller chunks.",
+            "Use visual aids to support text comprehension.",
+        ]
+    else:
+        return [
+            "Continue practicing and challenging yourself with complex texts.",
+            "Explore different writing styles to improve comprehension.",
+            "Engage in discussions about books to strengthen understanding.",
+        ]
+
+
+
+
+
 
 @app.route('/')
 def home():
@@ -82,16 +115,47 @@ def landing():
 def onboarding():
     return render_template('onboarding.html')
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
 @app.route('/get_questions')
 def get_questions():
-    # shuffled_questions = random.sample(questions, 10)
-    # return jsonify(shuffled_questions)
     return jsonify(questions)
 
 @app.route('/get_patterns')
 def get_paterns():
     shuffled_questions = random.sample(patterns, 5)
     return jsonify(shuffled_questions)
+
+@app.route('/get_suggestions', methods=['GET'])
+def fetch_suggestions():
+    score = int(request.args.get('score', 0))  
+    suggestions = get_suggestions(score)
+    return jsonify({"suggestions": suggestions})
+
+
+
+@app.route("/registerapi", methods=["POST"])
+def registerapi():
+    data = request.json
+    email = data.get("email")
+    password = data.get("password")
+    username = data.get("username")
+    if email in users:
+        return jsonify({"message": "Email already registered"}), 400
+    # users[email] = {"username": username, "password": password}  # to save data when connected with DB for future purpose
+    return jsonify({"message": "Registration successful"}), 201
+
+@app.route("/loginapi", methods=["POST"])
+def loginapi():
+    data = request.json
+    email = data.get("email")
+    password = data.get("password")
+    if email not in users or users[email]["password"] != password:
+        return jsonify({"message": "Invalid email or password"}), 401
+    return jsonify({"message": "Login successful", "username": users[email]["username"]}), 200
+
 
 
 if __name__ == '__main__':
