@@ -233,26 +233,18 @@
                 <button id="next-btn" class="next-btn">Next</button>
             </div>
         </div>
-
-        <!-- <div id="result-container" style="display: none;">
-            <h2 id="score-text" style="margin-top: 250px;"></h2>
-            <div style="display: flex; justify-content: center; gap: 10px;">
-                <button id="start-btn" onclick="window.location.href='/'">Exit</button>
-                <button id="start-btn" onclick="restartQuiz()">Retry</button>
-            </div>
-        </div> -->
         <div id="result-container" style="display: none;">
             <img id="result-image" src="{{ url_for('static', filename='images/result.jpeg') }}" alt="Result Image">
             <h2 id="score-text" style="margin-top: 20px;"></h2>
         
             <h3>Suggestions</h3>
             <div id="ai-suggestions"></div> <!-- AI-based suggestions will be populated here -->
-        
             <div style="display: flex; justify-content: center; gap: 10px;">
                 <button id="start-btn" onclick="window.location.href='/'">Exit</button>
                 <button id="start-btn" onclick="restartQuiz()">Retry</button>
             </div>
-        
+            
+            <h3>Video Recommendations</h3>
             <!-- YouTube Video Section -->
             <div style="display: flex; justify-content: center; gap: 20px; margin-top: 20px;">
                 <iframe width="400" height="250" src="https://www.youtube.com/embed/V3rbevc-5Ac?si=6DiPo3iAOa2XsJHu" frameborder="0" allowfullscreen></iframe>

@@ -1,7 +1,17 @@
 from flask import Flask, render_template, jsonify, request
 import random
+import os
+import google.generativeai as genai
+from dotenv import load_dotenv
 
 app = Flask(__name__)
+
+
+# AI BASED SUGGESTION FOR ASSESSMENT RESULT PAGE
+load_dotenv()
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+genai.configure(api_key=GEMINI_API_KEY)
+
 
 questions = [
     {"image":"https://tse1.mm.bing.net/th?id=OIP.iKEdZsVGxxPHhKA9pJ1gHgHaHZ&pid=Api&P=0&h=180","question": "What color is the sun?", "choice1": "Yellow", "choice2": "Blue", "choice3": "Green", "choice4": "Red", "answer": "Yellow"},
@@ -65,30 +75,20 @@ users = [
     },
 ]
 
-
 def get_suggestions(score):
-    if score <= 1:
-        return [
-            "Consult a professional for further assessment.",
-            "Engage in structured reading activities.",
-            "Use text-to-speech tools for better comprehension.",
-        ]
-    elif score <= 3:
-        return [
-            "Encourage more reading practice with engaging stories.",
-            "Break reading tasks into smaller chunks.",
-            "Use visual aids to support text comprehension.",
-        ]
-    else:
-        return [
-            "Continue practicing and challenging yourself with complex texts.",
-            "Explore different writing styles to improve comprehension.",
-            "Engage in discussions about books to strengthen understanding.",
-        ]
-
-
-
-
+    print("RUNNING API GEMINI------------------------------------------------------------------------------")
+    prompt = f"""
+    A user has taken a dyslexia assessment and scored {score}. 
+    Based on their score, provide three personalized suggestions to help them improve learning and reading.
+    Example:
+    - If the score is low, suggest simple reading exercises.
+    - If the score is high, suggest professional intervention.
+    Return the response in three lines without bulletin and just add \n in each line.
+    """
+    model = genai.GenerativeModel()
+    response = model.generate_content(prompt)
+    suggestions = response.text.strip().split("\n")[:3] 
+    return suggestions
 
 
 @app.route('/')
