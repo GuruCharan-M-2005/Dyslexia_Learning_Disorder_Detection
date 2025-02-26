@@ -5,12 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dyslexia Detection</title>
     <style>
-        body { background-color: #FFD700; font-family: Arial, sans-serif; text-align: center; }
+        body { font-family: Arial, sans-serif; text-align: center; }
         .container { max-width: 600px; margin: auto; padding: 20px; background: white; border-radius: 10px; }
+        .logo-container {
+            width: 100%;
+            padding: 20px 0 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+            margin-left: 20px;
+        }
+        .index-body hr {
+            width: 100%;
+            border: 1px solid #ddd;
+        }
         .btn { display: block; width: 80%; margin: 15px auto; padding: 15px; background: #FFA500; border: none; border-radius: 5px; cursor: pointer; font-size: 18px; text-decoration: none; color: white; }
     </style>
 </head>
-<body>
+<body class="index-body">
+    <div class="logo-container">
+        <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="Logo" class="logo">
+        <hr>
+    </div>
     <div class="container">
         <h1>Welcome to Dyslexia Detection</h1>
         <p>Select an activity:</p>

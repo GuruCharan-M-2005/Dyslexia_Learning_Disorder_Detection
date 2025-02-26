@@ -6,15 +6,17 @@
     <title>Onboarding</title>
     <style>
         .onboarding-body {
-            display: flex;
-            justify-content: center;
+            /* display: flex;
+            justify-content: center; */
             height: 65vh;
             background-color: #f5f5f5;
         }
         .container {
             position: relative;
+            margin-left: 200px;
+            margin-top: -30px;
             width: 1000px;
-            min-height: 650px;
+            min-height: 600px;
             background: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -33,9 +35,9 @@
         .active {
             display: block;
         }
-        .onboarding-body img {
+        .container img {
             width: 400px;
-            height: 500px;
+            height: 400px;
             border-radius: 10px;
         }
         .buttons {
@@ -55,9 +57,29 @@
         .onboarding-body button:hover {
             background-color: #e69e00;
         }
+        .logo-container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-left: 20px;
+        }
+        .onboarding-body hr {
+            width: 100%;
+            border: 1px solid #ddd;
+        }
     </style>
 </head>
 <body class="onboarding-body">
+    <div class="logo-container">
+        <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="Logo" class="logo">
+        <hr>
+    </div>
     <div class="container">
         <div class="slide active" id="slide1">
             <img src="{{ url_for('static', filename='images/onboarding1.png') }}" alt="Onboarding 1">
@@ -96,6 +118,7 @@
 
         function getStarted() {
             alert("Welcome to the platform!");
+            window.location.href="/activity";
         }
     </script>
 </body>

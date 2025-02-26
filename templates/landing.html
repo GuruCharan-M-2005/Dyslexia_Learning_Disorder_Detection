@@ -23,6 +23,7 @@
     }
 
     .nav-links {
+      margin-left: -2000px;
       display: flex;
       gap: 15px;
     }
@@ -112,12 +113,32 @@
       color: white;
       border-color: #e69e00;
     }
+    .home-body hr {
+        width: 100%;
+        border: 1px solid #ddd;
+    }
+    .logo-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        width: 80px;
+        height: auto;
+        margin-left: 20px;
+    }
   </style>
 </head>
 
 <body class="home-body">
 
   <header class="navbar">
+    <div class="logo-container">
+      <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="Logo" class="logo">
+      <!-- <hr> -->
+    </div>
     <nav class="nav-links">
       <a href="#">About</a>
       <a href="#">Careers</a>
@@ -126,17 +147,17 @@
       <a href="#">Projects</a>
     </nav>
     <div class="auth-buttons">
-      <a href="#" class="login-btn">Login</a>
-      <a href="#" class="register-btn">Register</a>
+      <a href="/login" class="login-btn">Login</a>
+      <a href="/login" class="register-btn">Register</a>
     </div>
   </header>
 
-  <section>
+  <section style="margin-top: -80px;">
     <div>
       <h1>Understand User Flow. <br><span class="highlight">Increase Conversion.</span></h1>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo tenetur fuga ducimus numquam ea!</p>
       <div class="btn-group">
-        <a href="#" class="btn">Get Started</a>
+        <a href="/login" class="btn">Get Started</a>
         <a href="#" class="btn btn-secondary">Learn More</a>
       </div>
     </div>

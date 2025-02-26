@@ -92,9 +92,9 @@ def get_suggestions(score):
     return suggestions
 
 
-@app.route('/')
-def home():
-    return render_template('index.html')
+@app.route('/activity')
+def activity():
+    return render_template('activity.html')
 
 @app.route('/assessment')
 def assessment():
@@ -108,7 +108,7 @@ def pattern():
 def reading():
     return render_template('reading.html')
 
-@app.route('/landing')
+@app.route('/')
 def landing():
     return render_template('landing.html')
 

@@ -12,15 +12,32 @@
             text-align: center;
         }
         
+        .logo-container {
+            width: 100%;
+            padding: 20px 0 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #quiz-container div{
+            padding: 5px;
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+            margin-left: 20px;
+        }
         .frame {
             background: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            width: 400px;
+            width: 800px;
             margin: auto;
             text-align: center;
-            min-height: 650px;
+            min-height: 580px;
+            margin-top: -20px;
         }
 
         .question-container {
@@ -64,8 +81,9 @@
         }
 
         .btn-container {
-            margin-left: 80px;
+            margin-left: 20vw;
             margin-top: 20px;
+            margin: 20px 0 0 18vw;
             display: flex;
             gap: 25px;
         }
@@ -100,21 +118,30 @@
         .image-container img {
             width: 100%;
             margin-top: 10px;
+            height: 400px;
             border-radius: 5px;
+        }
+        .pattern-body hr {
+            width: 100%;
+            border: 1px solid #ddd;
         }
     </style>
 </head>
 <body class="pattern-body">
+    <div class="logo-container">
+        <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="Logo" class="logo">
+        <hr>
+    </div>
     <div id="front-page" class="frame">
         <h2>Welcome to the Pattern Assessment</h2>
         <p class="main-text">Test your ability to recognize patterns.</p>
         <div class="image-container">
-            <img src="pattern_intro.jpg" alt="Pattern Introduction">
+            <img src="{{ url_for('static', filename='images/pattern.png') }}" alt="Pattern Introduction">
         </div>
         <button id="start-btn" class="nav-btn">Start</button>
     </div>
     <div id="quiz-container" class="frame" style="display: none;">
-        <h2>Pattern Assessment</h2>
+        <h2 style="margin-top: 100px;">Pattern Assessment</h2>
         <p id="instruction-text" style="font-weight: bold; color: #777; display: none; font-size: 20px;">
             Follow the Instruction and Answer correctly
         </p>
@@ -130,10 +157,10 @@
         <h2>Assessment Completed!</h2>
         <p id="score-text"></p>
         <div class="image-container">
-            <img src="score_image.jpg" alt="Score Result">
+            <img src="{{ url_for('static', filename='images/result.jpeg') }}" alt="Score Result">
         </div>
         <button id="restart-btn" class="nav-btn">Restart</button>
-        <button id="exit-btn" class="nav-btn" onclick="window.location.href='/home'">Exit</button>
+        <button id="exit-btn" class="nav-btn" onclick="window.location.href='/activity'">Exit</button>
     </div>
 
     <script>

@@ -141,7 +141,7 @@
                     <a href="#" class="forgot-password">Forgot Password?</a>
                     <button type="submit">Login</button>
                 </form>
-                <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+                <p>Don't have an account? <a href="" id="showRegister">Register</a></p>
             </div>
             <div id="registerBox" class="hidden">
                 <h2>Register</h2>
@@ -212,7 +212,7 @@
             $("#loginForm").submit(function (event) {
                 event.preventDefault();
                 alert("Checking credentials... (API request would happen here)");   // REMOVE WHEN DB IS CONNECTED
-                window.location.href = "/";
+                window.location.href = "/onboarding";
                 // let email = $("#loginEmail").val().trim();
                 // let password = $("#loginPassword").val().trim();
 
