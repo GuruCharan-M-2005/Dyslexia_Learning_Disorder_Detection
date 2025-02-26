@@ -88,6 +88,7 @@ def get_suggestions(score):
     model = genai.GenerativeModel()
     response = model.generate_content(prompt)
     suggestions = response.text.strip().split("\n")[:3] 
+    print(suggestions)
     return suggestions
 
 

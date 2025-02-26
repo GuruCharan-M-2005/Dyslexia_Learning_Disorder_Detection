@@ -6,41 +6,78 @@
     <title>Auth Page</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-        .login-body{
+        .login-body {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, sans-serif;
+            background-color: #fff5cc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
         }
-        .container {
+        .logo-container {
+            width: 100%;
+            padding: 20px 0 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+            margin-left: 20px;
+        }
+
+        .login-body hr {
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+        .main-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 120vh;
-            background-color: #fff5cc;
-            height: 100vh;
+            width: 80%;
+            height: 80%;
+            gap: 50px;
         }
-        .form-box {
+        .left-section {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .left-section img {
+            width: 600px;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .right-section {
+            width: 40%;
             background: white;
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
-            width: 100%;
-            max-width: 400px;
         }
-        .logo {
-            width: 100px;
-            margin-bottom: -5px;
+
+        .right-section h2 {
+            margin-bottom: 15px;
         }
+
         .login-body input {
             width: 100%;
             padding: 12px;
-            margin: 12px 0;
+            margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 16px;
         }
+
         .login-body button {
             width: 100%;
             padding: 12px;
@@ -52,9 +89,11 @@
             border-radius: 5px;
             margin-top: 12px;
         }
+
         .login-body button:hover {
             background-color: #e6ac00;
         }
+
         .forgot-password {
             display: block;
             text-align: right;
@@ -63,48 +102,70 @@
             color: #666;
             text-decoration: none;
         }
-        .login-body p {
-            font-size: 16px;
-            margin-top: 12px;
-        }
-        .login-body a {
-            color: #ffbf00;
-            text-decoration: none;
-        }
+
         .hidden {
             display: none;
         }
+
+        .register-extra-fields {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            column-gap: 50px; 
+            margin-top: 20px;
+        }
+        #registerBox{
+            margin-top: -30px;
+        }
+
     </style>
 </head>
 <body class="login-body">
-    <div class="container">
-        <div class="form-box" id="loginBox">
-            <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="Logo" class="logo">
-            <h2>Login</h2>
-            <p>Login to continue using the app</p>
-            <form id="loginForm">
-                <input type="email" id="loginEmail" placeholder="Enter your email" required>
-                <input type="password" id="loginPassword" placeholder="Enter your password" required>
-                <a href="#" class="forgot-password">Forgot Password?</a>
-                <button type="submit">Login</button>
-            </form>
-            <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+    <div class="logo-container">
+        <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="Logo" class="logo">
+        <hr>
+    </div>
+
+    <div class="main-container">
+        <div class="left-section">
+            <img src="{{ url_for('static', filename='images/login.png') }}" alt="auth-image" width="200px" height="200px" class="auth-image">
         </div>
 
-        <div class="form-box hidden" id="registerBox">
-            <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="Logo" class="logo">
-            <h2>Register</h2>
-            <p>Enter your personal information</p>
-            <form id="registerForm">
-                <input type="text" id="username" placeholder="Enter your username" required>
-                <input type="email" id="registerEmail" placeholder="Enter your email" required>
-                <input type="password" id="registerPassword" placeholder="Enter your password" required>
-                <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
-                <button type="submit">Register</button>
-            </form>
-            <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+        <div class="right-section">
+            <div id="loginBox">
+                <h2>Login</h2>
+                <p>Login to continue using the app</p>
+                <form id="loginForm">
+                    <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+            </div>
+            <div id="registerBox" class="hidden">
+                <h2>Register</h2>
+                <p>Enter your personal information</p>
+                <form id="registerForm">
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                    <input type="email" id="registerEmail" placeholder="Enter your email" required>
+                    <input type="password" id="registerPassword" placeholder="Enter your password" required>
+                    <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+
+                    <div class="register-extra-fields">
+                        <input type="text" id="childName" placeholder="Child Name" required>
+                        <input type="number" id="childAge" placeholder="Age" required>
+                        <input type="text" id="childGender" placeholder="Gender" required>
+                        <input type="text" id="birthPlace" placeholder="Place of Birth" required>
+                    </div>
+
+                    <button type="submit">Register</button>
+                </form>
+                <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+            </div>
         </div>
     </div>
+
     <script>
         $(document).ready(function () {
             $("#showRegister").click(function (e) {
