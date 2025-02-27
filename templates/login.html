@@ -173,62 +173,80 @@
                 $("#loginBox").hide();
                 $("#registerBox").show();
             });
-
+        
             $("#showLogin").click(function (e) {
                 e.preventDefault();
                 $("#registerBox").hide();
                 $("#loginBox").show();
             });
-
-            // Register User
+        
             $("#registerForm").submit(function (event) {
                 event.preventDefault();
-                // let username = $("#username").val().trim();
-                // let email = $("#registerEmail").val().trim();
-                // let password = $("#registerPassword").val().trim();
-                // let confirmPassword = $("#confirmPassword").val().trim();
-                // if (password !== confirmPassword) {
-                //     alert("Passwords do not match!");
-                //     return;
-                // }
-                // $.ajax({
-                //     url: "http://127.0.0.1:5000/register",
-                //     type: "POST",
-                //     contentType: "application/json",
-                //     data: JSON.stringify({ username, email, password }),
-                //     success: function (response) {
-                //         alert(response.message);
-                        alert("Now login with your credentials.");  // REMOVE WHEN DB IS CONNECTED
+            
+                let username = $("#username").val().trim();
+                let email = $("#registerEmail").val().trim();
+                let password = $("#registerPassword").val().trim();
+                let confirmPassword = $("#confirmPassword").val().trim();
+                let name = $("#childName").val().trim();
+                let age = $("#childAge").val().trim();
+                let gender = $("#childGender").val().trim();
+                let placeofbirth = $("#birthPlace").val().trim();
+            
+                if (password !== confirmPassword) {
+                    alert("Passwords do not match!");
+                    return;
+                }
+            
+                let userData = {
+                    username: username,
+                    email: email,
+                    password: password,
+                    name: name,
+                    age: parseInt(age),
+                    gender: gender,
+                    placeofbirth: placeofbirth
+                };
+            
+                $.ajax({
+                    url: "http://127.0.0.1:5000/registerapi",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(userData),
+                    success: function (response) {
+                        alert(response.message);
                         $("#registerBox").hide();
                         $("#loginBox").show();
-                //     },
-                //     error: function (xhr) {
-                //         alert(xhr.responseJSON.message);
-                //     }
-                // });
+                    },
+                    error: function (xhr) {
+                        alert(xhr.responseJSON.message);
+                    }
+                });
             });
-
-            // Login User
+        
             $("#loginForm").submit(function (event) {
                 event.preventDefault();
-                alert("Checking credentials... (API request would happen here)");   // REMOVE WHEN DB IS CONNECTED
-                window.location.href = "/onboarding";
-                // let email = $("#loginEmail").val().trim();
-                // let password = $("#loginPassword").val().trim();
-
-                // $.ajax({
-                //     url: "http://127.0.0.1:5000/login",
-                //     type: "POST",
-                //     contentType: "application/json",
-                //     data: JSON.stringify({ email, password }),
-                //     success: function (response) {
-                //         alert(response.message);
-                //         window.location.href = "dashboard.html";
-                //     },
-                //     error: function (xhr) {
-                //         alert(xhr.responseJSON.message);
-                //     }
-                // });
+            
+                let email = $("#loginEmail").val().trim();
+                let password = $("#loginPassword").val().trim();
+            
+                let loginData = {
+                    email: email,
+                    password: password
+                };
+            
+                $.ajax({
+                    url: "http://127.0.0.1:5000/loginapi",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(loginData),
+                    success: function (response) {
+                        alert(response.message);
+                        window.location.href = "/onboarding";
+                    },
+                    error: function (xhr) {
+                        alert(xhr.responseJSON.message);
+                    }
+                });
             });
         });
     </script>
