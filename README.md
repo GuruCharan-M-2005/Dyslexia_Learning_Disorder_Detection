@@ -26,6 +26,59 @@ Ensure Python is installed, then run:
 pip install -r requirements.txt
 ```
 
+### 2️⃣ Set Up Database
+
+## Install MongoDB
+1. Download and install MongoDB from [MongoDB Official Website](https://www.mongodb.com/try/download/community).
+2. Start the MongoDB service:
+   ```sh
+   mongod --dbpath /path/to/data/db
+   ```
+
+## Create Database and Collections
+1. Open the MongoDB shell:
+   ```sh
+   mongo
+   ```
+2. Create the `Dyslexia` database:
+   ```js
+   use Dyslexia
+   ```
+3. Create collections:
+   ```js
+   db.createCollection("Assessment")
+   db.createCollection("Pattern")
+   db.createCollection("User")
+   ```
+
+## MongoDB Connection via Python
+```python
+from pymongo import MongoClient
+
+client = MongoClient("mongodb://localhost:27017")
+db = client["Dyslexia"]  # Database name
+
+# Collections
+questions_collection = db["Assessment"]
+patterns_collection = db["Pattern"]
+users_collection = db["User"]
+```
+
+## Collections Overview
+- **Assessment**: Stores assessment-related data.
+- **Pattern**: Contains patterns for analysis.
+- **User**: Holds user-related details.
+
+## Setup Instructions
+1. Install MongoDB and start the service.
+2. Install `pymongo` package if not already installed:
+   ```sh
+   pip install pymongo
+   ```
+3. Run the Python script to establish the connection.
+
+``
+
 ### 3️⃣ Set Up API Key  
 Create a `.env` file in the project directory and add your Google Gemini API key:  
 ```env
