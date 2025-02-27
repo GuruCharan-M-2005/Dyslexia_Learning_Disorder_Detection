@@ -77,7 +77,7 @@ users_collection = db["User"]
    ```
 3. Run the Python script to establish the connection.
 
-``
+
 
 ### 4️⃣  Set Up API Key  
 Create a `.env` file in the project directory and add your Google Gemini API key:  
