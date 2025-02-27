@@ -33,7 +33,7 @@ Download and install MongoDB from [MongoDB Official Website](https://www.mongodb
 
 #### Create Database and Collections
 
-#### Open the MongoDB Compass and Create the `Dyslexia` database:**
+##### Open the MongoDB Compass and Create the `Dyslexia` database:
 
 #### Collections Overview
 - **Assessment**: Stores assessment-related data.
