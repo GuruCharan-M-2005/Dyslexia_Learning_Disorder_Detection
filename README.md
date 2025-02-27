@@ -26,16 +26,16 @@ Ensure Python is installed, then run:
 pip install -r requirements.txt
 ```
 
-### 2️⃣ Set Up Database
+### 3️⃣ Set Up Database
 
-## Install MongoDB
+#### Install MongoDB
 1. Download and install MongoDB from [MongoDB Official Website](https://www.mongodb.com/try/download/community).
 2. Start the MongoDB service:
    ```sh
    mongod --dbpath /path/to/data/db
    ```
 
-## Create Database and Collections
+#### Create Database and Collections
 1. Open the MongoDB shell:
    ```sh
    mongo
@@ -51,7 +51,7 @@ pip install -r requirements.txt
    db.createCollection("User")
    ```
 
-## MongoDB Connection via Python
+#### MongoDB Connection via Python
 ```python
 from pymongo import MongoClient
 
@@ -64,12 +64,12 @@ patterns_collection = db["Pattern"]
 users_collection = db["User"]
 ```
 
-## Collections Overview
+#### Collections Overview
 - **Assessment**: Stores assessment-related data.
 - **Pattern**: Contains patterns for analysis.
 - **User**: Holds user-related details.
 
-## Setup Instructions
+#### Setup Instructions
 1. Install MongoDB and start the service.
 2. Install `pymongo` package if not already installed:
    ```sh
@@ -79,13 +79,13 @@ users_collection = db["User"]
 
 ``
 
-### 3️⃣ Set Up API Key  
+### 4️⃣  Set Up API Key  
 Create a `.env` file in the project directory and add your Google Gemini API key:  
 ```env
 GEMINI_API_KEY=your-api-key-here
 ```
 
-### 4️⃣ Run the Flask App  
+### 5️⃣ Run the Flask App  
 Start the application by running:  
 ```bash
 python main.py
