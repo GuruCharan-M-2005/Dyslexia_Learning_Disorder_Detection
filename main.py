@@ -9,10 +9,17 @@ load_dotenv()
 app = Flask(__name__)
 
 client = MongoClient("mongodb://localhost:27017")
-db = client["Dyslexia"]  # Database name
-questions_collection = db["Assessment"]
-patterns_collection = db["Pattern"]
-users_collection = db["User"]
+db = client["Dyslexia"] 
+
+def get_or_create_collection(db, collection_name):
+    if collection_name not in db.list_collection_names():
+        db.create_collection(collection_name)
+    return db[collection_name]
+
+questions_collection = get_or_create_collection(db, "Assessment")
+patterns_collection = get_or_create_collection(db, "Pattern")
+users_collection = get_or_create_collection(db, "User")
+
 
 # AI SUGGESTIONS
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
