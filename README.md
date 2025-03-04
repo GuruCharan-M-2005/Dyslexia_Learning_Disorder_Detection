@@ -50,7 +50,16 @@ Create a `.env` file in the project directory and add your Google Gemini API key
 GEMINI_API_KEY=your-api-key-here
 ```
 
-### 5️⃣ Run the Flask App  
+
+### 5️⃣ Download Face Detection Landmark for Eye Tracking
+Run this command in terminal of your current project folder.
+```bash
+python -c "import urllib.request; urllib.request.urlretrieve('http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2', 'shape_predictor_68_face_landmarks.dat.bz2')"
+python -c "import bz2, shutil; with bz2.BZ2File('shape_predictor_68_face_landmarks.dat.bz2') as fr, open('shape_predictor_68_face_landmarks.dat', 'wb') as fw: shutil.copyfileobj(fr, fw)"
+```
+
+
+### 6️⃣ Run the Flask App  
 Start the application by running:  
 ```bash
 python main.py
