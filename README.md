@@ -39,8 +39,9 @@ Download and install MongoDB from [MongoDB Official Website](https://www.mongodb
 - **Pattern**: Contains patterns for analysis.
 - **User**: Holds user-related details.
 
-##### Download json files from github repo and add them in MongoDB database.
-
+``` 
+ Download json files from github repo and add them in MongoDB database.
+```
 
 
 ### 4️⃣  Set Up API Key  
