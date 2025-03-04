@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "67c076dc6395232aff37ea69"
+  },
+  "username": "spacece",
+  "email": "spacece@gmail.com",
+  "password": "spacece",
+  "name": "spacece",
+  "age": 12,
+  "gender": "male",
+  "placeofbirth": "new delhi"
+},
+{
+  "_id": {
+    "$oid": "67c07b264eab0d7a5e7bc55b"
+  },
+  "username": "guru",
+  "email": "guru@gmail.com",
+  "password": "g@123",
+  "name": "guru",
+  "age": 7,
+  "gender": "male",
+  "placeofbirth": "chennai"
+}]

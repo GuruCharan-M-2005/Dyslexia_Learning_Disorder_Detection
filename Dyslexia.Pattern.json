@@ -1,0 +1,257 @@
+[{
+  "_id": {
+    "$oid": "67c0761b6395232aff37ea56"
+  },
+  "question": "Select the next pattern in the sequence:",
+  "sequence": [
+    "⬛",
+    "⚫",
+    "⬛",
+    "?"
+  ],
+  "options": {
+    "square": "⬛ Square",
+    "circle": "⚫ Circle"
+  },
+  "answer": "circle"
+},
+{
+  "_id": {
+    "$oid": "67c0761b6395232aff37ea57"
+  },
+  "question": "Which shape comes next?",
+  "sequence": [
+    "🔺",
+    "🔵",
+    "🔺",
+    "?"
+  ],
+  "options": {
+    "triangle": "🔺 Triangle",
+    "circle": "🔵 Circle"
+  },
+  "answer": "circle"
+},
+{
+  "_id": {
+    "$oid": "67c0761b6395232aff37ea58"
+  },
+  "question": "Pick the correct pattern:",
+  "sequence": [
+    "🟢",
+    "🟡",
+    "🟢",
+    "?"
+  ],
+  "options": {
+    "green": "🟢 Green",
+    "yellow": "🟡 Yellow"
+  },
+  "answer": "yellow"
+},
+{
+  "_id": {
+    "$oid": "67c0761b6395232aff37ea59"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟥",
+    "🟨",
+    "🟥",
+    "?"
+  ],
+  "options": {
+    "red": "🟥 Red",
+    "yellow": "🟨 Yellow"
+  },
+  "answer": "yellow"
+},
+{
+  "_id": {
+    "$oid": "67c0761b6395232aff37ea5a"
+  },
+  "question": "Identify the pattern:",
+  "sequence": [
+    "🔶",
+    "🔷",
+    "🔶",
+    "?"
+  ],
+  "options": {
+    "diamond": "🔷 Diamond",
+    "hexagon": "🔶 Hexagon"
+  },
+  "answer": "diamond"
+},
+{
+  "_id": {
+    "$oid": "67c0761b6395232aff37ea5b"
+  },
+  "question": "Next shape?",
+  "sequence": [
+    "🔵",
+    "🔴",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "blue": "🔵 Blue",
+    "red": "🔴 Red"
+  },
+  "answer": "red"
+},
+{
+  "_id": {
+    "$oid": "67c0761b6395232aff37ea5c"
+  },
+  "question": "Complete the sequence:",
+  "sequence": [
+    "⬜",
+    "⬛",
+    "⬜",
+    "?"
+  ],
+  "options": {
+    "white": "⬜ White",
+    "black": "⬛ Black"
+  },
+  "answer": "black"
+},
+{
+  "_id": {
+    "$oid": "67c0761b6395232aff37ea5d"
+  },
+  "question": "What follows?",
+  "sequence": [
+    "🟧",
+    "🟦",
+    "🟧",
+    "?"
+  ],
+  "options": {
+    "orange": "🟧 Orange",
+    "blue": "🟦 Blue"
+  },
+  "answer": "blue"
+},
+{
+  "_id": {
+    "$oid": "67c0761b6395232aff37ea5e"
+  },
+  "question": "Guess the missing shape:",
+  "sequence": [
+    "🟠",
+    "🟣",
+    "🟠",
+    "?"
+  ],
+  "options": {
+    "purple": "🟣 Purple",
+    "orange": "🟠 Orange"
+  },
+  "answer": "purple"
+},
+{
+  "_id": {
+    "$oid": "67c0761b6395232aff37ea5f"
+  },
+  "question": "Find the next pattern:",
+  "sequence": [
+    "⬜",
+    "⬛",
+    "⬛",
+    "⬜",
+    "⬜",
+    "?"
+  ],
+  "options": {
+    "black": "⬛ Black",
+    "white": "⬜ White"
+  },
+  "answer": "black"
+},
+{
+  "_id": {
+    "$oid": "67c0761b6395232aff37ea60"
+  },
+  "question": "What is the missing shape?",
+  "sequence": [
+    "🔺",
+    "🔻",
+    "🔺",
+    "?"
+  ],
+  "options": {
+    "up": "🔺 Up Triangle",
+    "down": "🔻 Down Triangle"
+  },
+  "answer": "down"
+},
+{
+  "_id": {
+    "$oid": "67c0761b6395232aff37ea61"
+  },
+  "question": "Choose the correct pattern:",
+  "sequence": [
+    "🟥",
+    "🟩",
+    "🟦",
+    "?"
+  ],
+  "options": {
+    "blue": "🟦 Blue",
+    "green": "🟩 Green"
+  },
+  "answer": "green"
+},
+{
+  "_id": {
+    "$oid": "67c0761b6395232aff37ea62"
+  },
+  "question": "Complete the set:",
+  "sequence": [
+    "🟤",
+    "⚪",
+    "🟤",
+    "?"
+  ],
+  "options": {
+    "white": "⚪ White",
+    "brown": "🟤 Brown"
+  },
+  "answer": "white"
+},
+{
+  "_id": {
+    "$oid": "67c0761b6395232aff37ea63"
+  },
+  "question": "Identify the missing pattern:",
+  "sequence": [
+    "🟪",
+    "🟨",
+    "🟪",
+    "?"
+  ],
+  "options": {
+    "yellow": "🟨 Yellow",
+    "purple": "🟪 Purple"
+  },
+  "answer": "yellow"
+},
+{
+  "_id": {
+    "$oid": "67c0761b6395232aff37ea64"
+  },
+  "question": "Which shape continues the pattern?",
+  "sequence": [
+    "🟢",
+    "🟠",
+    "🟢",
+    "?"
+  ],
+  "options": {
+    "green": "🟢 Green",
+    "orange": "🟠 Orange"
+  },
+  "answer": "orange"
+}]
