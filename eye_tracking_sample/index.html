@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye Tracking Assessment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2 class="logo">👁 SpaceECE</h2>
+            <ul>
+                <li>📊 Dashboard</li>
+                <li>🎯 Activities</li>
+                <li>👤 Profile</li>
+                <li>📈 Progress</li>
+                <li>🤖 Ask AI</li>
+                <li>⚙️ Settings</li>
+                <li>🚪 Logout</li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- First Screen (Start Test) -->
+            <div id="startScreen">
+                <h1>Assessment Tests</h1>
+                <h2>Current Test: Eye Tracking <span class="timer">02:45</span></h2>
+                <p class="instruction">Follow the instructions to complete the eye tracking assessment</p>
+
+                <div class="instructions">
+                    <h3>Instructions</h3>
+                    <ol>
+                        <li>Position your face within the camera frame</li>
+                        <li>Keep your head still and follow the dot with your eyes only</li>
+                        <li>The test will begin when you click 'Start Test'</li>
+                    </ol>
+                </div>
+
+                <button id="startTest">Start Test</button>
+            </div>
+
+            <!-- Second Screen (Eye Tracking Instructions) -->
+            <div id="eyeTrackingScreen" class="hidden">
+                <h1>Eye Tracking Test</h1>
+                <p>Follow the instructions to complete the eye tracking assessment</p>
+
+                <div class="face-circle">
+                    <video id="video" width="300" height="300" autoplay></video>
+                    <canvas id="canvas" width="300" height="300"></canvas>
+                </div>
+                
+
+                <p>Make sure your face is well-lit and centered</p>
+
+                <button id="startTracking">Start Tracking Now</button>
+            </div>
+
+            <!-- Third Screen (Camera Access Required) -->
+            <div id="cameraAccessScreen" class="hidden">
+                <h1>Eye Tracking Test</h1>
+                <p>Follow the instructions to complete the eye tracking assessment</p>
+
+                <h3>Camera Access Required</h3>
+                <p>To proceed with the eye tracking test, we need access to your camera.</p>
+                <ul>
+                    <li>Your camera is connected and working</li>
+                    <li>You're in a well-lit environment</li>
+                    <li>Your face is clearly visible</li>
+                </ul>
+
+                <div class="camera-box">
+                    <video id="video" width="640" height="480" autoplay></video>
+                    <canvas id="canvas" width="640" height="480"></canvas>
+                </div>
+                
+                
+
+                <button id="allowCamera">Allow Camera</button>
+                <button id="finishTest" class="finish-btn">Finish</button>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
