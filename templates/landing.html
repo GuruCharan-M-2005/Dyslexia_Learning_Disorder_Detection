@@ -23,7 +23,7 @@
     }
 
     .nav-links {
-      margin-left: -2000px;
+      margin-left: -2400px;
       display: flex;
       gap: 15px;
     }
@@ -43,6 +43,7 @@
       background-color: #ffb700;
       color: white;
     }
+
     .auth-buttons {
       display: flex;
       gap: 20px;
@@ -55,22 +56,35 @@
       font-weight: bold;
       border-radius: 5px;
       color: white;
-      background-color: #ffb700
+      background-color: #ffb700;
     }
 
     .auth-buttons a:hover {
-      background-color: #e69e00
+      background-color: #e69e00;
     }
 
-    .home-body section {
+    .logo-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      width: 80px;
+      height: auto;
+      margin-left: 20px;
+    }
+
+    .hero-section {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 90vh;
+      height: 50vh;
       text-align: center;
     }
 
-    .home-body h1 {
+    .hero-section h1 {
       font-size: 3rem;
       font-weight: bold;
     }
@@ -79,7 +93,7 @@
       color: #ffb700;
     }
 
-    .home-body p {
+    .hero-section p {
       font-size: 1.2rem;
       margin-top: 10px;
     }
@@ -113,21 +127,55 @@
       color: white;
       border-color: #e69e00;
     }
-    .home-body hr {
-        width: 100%;
-        border: 1px solid #ddd;
-    }
-    .logo-container {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+
+    .about-section {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
     }
 
-    .logo {
-        width: 80px;
-        height: auto;
-        margin-left: 20px;
+    .contact-section {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 70px;
+      background-color: white;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .contact-section p, .about-section p{
+      line-height: 1.7;
+    }
+
+    .contact-form div {
+      margin-bottom: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .header-two{
+      font-size: 40px;
+      text-align: center;
+    }
+
+    .contact-form button {
+      background-color: #ffcc00;
+      color: black;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .contact-form button:hover{
+      background-color: #ffb700;
     }
   </style>
 </head>
@@ -137,31 +185,63 @@
   <header class="navbar">
     <div class="logo-container">
       <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="Logo" class="logo">
-      <!-- <hr> -->
     </div>
     <nav class="nav-links">
-      <a href="#">About</a>
-      <a href="#">Careers</a>
-      <a href="#">History</a>
-      <a href="#">Services</a>
-      <a href="#">Projects</a>
+      <!-- <a href="#about">About</a>
+      <a href="#contact">Contact</a> -->
     </nav>
     <div class="auth-buttons">
       <a href="/login" class="login-btn">Login</a>
-      <!-- <a href="/login" class="register-btn">Register</a> -->
     </div>
   </header>
 
-  <section style="margin-top: -80px;">
+  <section class="hero-section">
     <div>
       <h1>Understand User Flow. <br><span class="highlight">Increase Conversion.</span></h1>
       <p>The following may be signs of a learning disorder: Lack of enthusiasm for reading or writing. Trouble memorizing things.</p>
       <div class="btn-group">
         <a href="/login" class="btn">Get Started</a>
-        <a href="#" class="btn btn-secondary">Learn More</a>
+        <a href="#about" class="btn btn-secondary">Learn More</a>
       </div>
     </div>
   </section>
+
+  <section id="about" class="about-section">
+    <h1  class="header-two">🚀 About NeuroSign</h1>
+    <h2>🌟 Who We Are</h2>
+    <p>Welcome to NeuroSign, a platform dedicated to helping parents, educators, and specialists identify early signs of dyslexia in children aged 2 to 8 years. Our goal is to make the detection of learning differences simple, playful, and engaging through interactive pattern recognition tests and assessment questions..</p>
+    <p>We understand how crucial early diagnosis is for children, as early intervention can significantly improve their reading, writing, and learning journey. This platform is designed to provide early dyslexia screening in a fun and stress-free environment.</p>
+    <h2>💡 What We Offer</h2>
+    <p>✅Phonological Awareness Tests - Interactive questions designed to understand a child's sound recognition and phonics skills.</p>
+    <p>✅Memory & Visual Recognition Tests - Tests that analyze the child's ability to recall symbols, letters, and sequences.</p>
+    <p>✅ After completing the assessment, you will receive a detailed report that indicates whether the child shows early signs of dyslexia.</p>
+    
+    
+    <h2>🎯 Our Mission</h2>
+    <p>Our mission is simple: Identify, Understand, and Support.</p>
+    <p>We believe every child learns differently, and with the right guidance and support, they can achieve their full potential. Early identification of learning difficulties like dyslexia allows parents and educators to provide timely interventions, ensuring the child does not fall behind in learning.
+
+  </section>
+
+  <!-- <section id="contact" class="contact-section">
+    <h1 class="header-two">📩 Get in Touch</h1>
+    <p>If you have any questions, feel free to reach out to us.</p>
+    <form id="contactForm" class="contact-form">
+      <div>
+        <label>Name:</label>
+        <input type="text" name="name" id="name" required>
+      </div>
+      <div>
+        <label>Email:</label>
+        <input type="email" name="email" id="email" required>
+      </div>
+      <div>
+        <label>Message:</label>
+        <textarea name="message" id="message" rows="5" required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
+  </section> -->
 
 </body>
 

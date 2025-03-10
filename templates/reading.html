@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
             margin: 0;
             padding: 0;
         }
+
         .container {
             max-width: 500px;
             margin: 50px auto;
@@ -21,10 +23,12 @@
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
         }
+
         .reading-class h2 {
             font-size: 24px;
             color: #ffb700;
         }
+
         .button {
             padding: 10px 20px;
             font-size: 16px;
@@ -35,9 +39,11 @@
             margin-top: 10px;
             color: black;
         }
+
         .button:hover {
             background-color: #e69e00;
         }
+
         .feedback {
             font-size: 18px;
             font-weight: bold;
@@ -45,34 +51,95 @@
         }
     </style>
 </head>
+
 <body class="reading-class">
     <div class="container" id="text-screen">
         <h2>Read the paragraph aloud:</h2>
-        <p id="paragraph">This is an example paragraph in English. Please read it aloud.</p>
+        <p id="paragraph">Click the button to start.</p>
         <button class="button" onclick="startRecognition()">Start Speaking</button>
         <p id="user-speech" class="feedback"></p>
         <p id="feedback-message" class="feedback"></p>
     </div>
 
     <script>
-        let correctText = "This is an example paragraph in English. Please read it aloud.";
+        let paragraphs = [
+            "The cat sat on the mat.",
+            "The dog ran to the hut.",
+            "The sun is hot today.",
+            "A big rat sat on a hat.",
+            "The kid hid in the box.",
+            "Pat the fat cat.",
+            "Hop on the top of the pot.",
+            "The bat sat with a rat.",
+            "The bug dug in the rug.",
+            "A fox in a box with socks.",
+            "The clock ticks on the wall.",
+            "Fred fed the red hen.",
+            "Sam sang a song.",
+            "Tom had a big drum.",
+            "The fish is in the dish.",
+            "The dog sat under the big red hat.",
+            "A fat cat ran up the tall hill.",
+            "Ben had ten red pens in his bag.",
+            "The sun is hot, and the boy got wet.",
+            "Jack packed a snack in his black sack.",
+            "The boy had a big ball.",
+            "Dad had a bad pad.",
+            "Ben put a pen in the pot.",
+            "Pam sat on a mat with a map.",
+            "The pig ran to the big pit.",
+            "She sells seashells by the seashore.",
+            "Ted fed the red hen.",
+            "A big bug dug in the mud.",
+            "The cat and the rat had a chat.",
+            "Tim put a big lid on the pot.",
+            "The man ran with the can.",
+            "Jim hid in the big pit.",
+            "The duck sat on the rock.",
+            "Ben met a red hen.",
+            "The kid had a big fig.",
+            "Betty bought a bit of butter.",
+            "Six slippery snails slid slowly.",
+            "Red lorry, yellow lorry.",
+            "A big black bug bit a big black bear.",
+            "She sees cheese and seashells."
+        ];
+
+        // Shuffle and select 5 random questions
+        let selectedParagraphs = [];
+        while (selectedParagraphs.length < 10) {
+            let randomIndex = Math.floor(Math.random() * paragraphs.length);
+            if (!selectedParagraphs.includes(paragraphs[randomIndex])) {
+                selectedParagraphs.push(paragraphs[randomIndex]);
+            }
+        }
+
+        let currentIndex = 0;
+        let totalErrors = 0;
 
         function startRecognition() {
+            if (currentIndex >= selectedParagraphs.length) {
+                showFinalResult();
+                return;
+            }
+
+            document.getElementById("paragraph").textContent = selectedParagraphs[currentIndex];
+
             const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
             recognition.lang = "en-US";
             recognition.interimResults = false;
 
-            recognition.onstart = function() {
+            recognition.onstart = function () {
                 document.getElementById("user-speech").textContent = "Listening...";
             };
 
-            recognition.onresult = function(event) {
+            recognition.onresult = function (event) {
                 const userSpeech = event.results[0][0].transcript;
                 document.getElementById("user-speech").textContent = "You said: " + userSpeech;
                 evaluateSpeech(userSpeech);
             };
 
-            recognition.onerror = function() {
+            recognition.onerror = function () {
                 document.getElementById("user-speech").textContent = "Error occurred, please try again.";
             };
 
@@ -80,25 +147,61 @@
         }
 
         function evaluateSpeech(userSpeech) {
-            const originalWords = correctText.toLowerCase().split(" ");
-            const userWords = userSpeech.toLowerCase().split(" ");
+            const correctText = selectedParagraphs[currentIndex].toLowerCase();
+            const userText = userSpeech.toLowerCase();
+
+            const originalWords = correctText.split(" ");
+            const userWords = userText.split(" ");
             let errors = 0;
 
+            // Count errors
             for (let i = 0; i < originalWords.length; i++) {
                 if (userWords[i] !== originalWords[i]) {
                     errors++;
                 }
             }
 
+            totalErrors += errors;
+            currentIndex++;
+
+            // Show feedback
             let feedbackMessage = document.getElementById("feedback-message");
             if (errors > 5) {
-                feedbackMessage.innerHTML = "<span style='color: red;'>Major Dyslexia Detected</span><br>Try phonics exercises and consult a speech therapist.";
+                feedbackMessage.innerHTML = "<span style='color: red;'>Major Dyslexia Detected</span><br>Move to the next paragraph.";
             } else if (errors > 2) {
-                feedbackMessage.innerHTML = "<span style='color: orange;'>Minor Dyslexia Detected</span><br>Practice reading aloud and use speech improvement apps.";
+                feedbackMessage.innerHTML = "<span style='color: orange;'>Minor Dyslexia Detected</span><br>Keep practicing.";
             } else {
-                feedbackMessage.innerHTML = "<span style='color: green;'>No Dyslexia Detected</span><br>Great job!";
+                feedbackMessage.innerHTML = "<span style='color: green;'>Good Job!</span><br>Next paragraph.";
             }
+
+            // Move to next paragraph after 3 seconds
+            setTimeout(() => {
+                if (currentIndex < selectedParagraphs.length) {
+                    startRecognition();
+                } else {
+                    showFinalResult();
+                }
+            }, 3000);
+        }
+
+        function showFinalResult() {
+            let resultMessage = "";
+            if (totalErrors > 20) {
+                resultMessage = "<span style='color: red;'>Major Dyslexia Detected</span><br>Seek professional guidance.";
+            } else if (totalErrors > 10) {
+                resultMessage = "<span style='color: orange;'>Minor Dyslexia Detected</span><br>Practice more and improve.";
+            } else {
+                resultMessage = "<span style='color: green;'>No Dyslexia Detected</span><br>Excellent reading skills!";
+            }
+
+            document.getElementById("text-screen").innerHTML = `
+                <h2>Test Completed</h2>
+                <p>Total Errors: ${totalErrors}</p>
+                <p>${resultMessage}</p>
+                <button class="button" onclick="location.reload()">Restart Test</button>
+            `;
         }
     </script>
 </body>
+
 </html>
