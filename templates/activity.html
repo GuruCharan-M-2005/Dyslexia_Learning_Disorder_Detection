@@ -4,86 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dyslexia Detection</title>
-    <style>
-        .container { 
-            max-width: 800px; 
-            text-align: center;
-            margin: auto; 
-            padding: 20px; 
-            background: white; 
-            border-radius: 10px; 
-            color: black;
-        }
-        .logo-container {
-            width: 100%;
-            padding: 20px 0 0 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .logo {
-            width: 80px;
-            height: auto;
-            margin-left: 20px;
-        }
-        .index-body hr {
-            width: 100%;
-            border: 1px solid #ddd;
-        }
-        .activities {
-            display: flex;
-            justify-content: space-around;
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .activity {
-            text-align: center;
-            background: #FFA500;
-            padding: 25px;
-            border-radius: 10px;
-            text-decoration: none;
-            width: 140px;
-            cursor: pointer;
-        }
-        .activity span{
-            color: black;
-            font-size: 20px;
-            font-weight: 500px;
-        }
-        .activity img {
-            width: 80px;
-            height: 80px;
-            border-radius: 5px;
-        }
-        .activity a {
-            display: block;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="index-body">
-    <div class="logo-container">
-        <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="Logo" class="logo">
-        <hr>
+<body class="bg-gray-100 text-gray-900">
+    <div class="w-full flex items-center justify-between py-5 px-10 border-b border-gray-300">
+        <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="Logo" class="w-20">
     </div>
-    <div class="container">
-        <h1>Welcome to Dyslexia Detection</h1>
-        <p style="font-size: 22px;">Select an activity:</p>
-        <div class="activities">
-            <a href="/assessment" class="activity">
-                <img src="{{ url_for('static', filename='images/activity1.png') }}" alt="Assessment" width="10px" height="10px"><br><br>
-                <span>Start Assessment</span>
+    <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md mt-10 text-center">
+        <h1 class="text-3xl font-bold text-gray-800">Welcome to Dyslexia Detection</h1>
+        <p class="text-xl mt-4">Select an activity:</p>
+        <div class="flex justify-center gap-10 mt-8">
+            <a href="/assessment" class="flex flex-col items-center bg-orange-500 text-black px-6 py-4 rounded-lg shadow-lg hover:bg-orange-600 transition">
+                <img src="{{ url_for('static', filename='images/activity1.png') }}" alt="Assessment" class="w-20 h-20 rounded-md">
+                <span class="mt-3 text-lg font-medium">Start Assessment</span>
             </a>
-            <a href="/pattern" class="activity">
-                <img src="{{ url_for('static', filename='images/activity2.png') }}" alt="Pattern Recognition" width="10px" height="10px"><br><br>
-                <span>Pattern Recognition</span>
+            <a href="/pattern" class="flex flex-col items-center bg-orange-500 text-black px-6 py-4 rounded-lg shadow-lg hover:bg-orange-600 transition">
+                <img src="{{ url_for('static', filename='images/activity2.png') }}" alt="Pattern Recognition" class="w-20 h-20 rounded-md">
+                <span class="mt-3 text-lg font-medium">Pattern Recognition</span>
             </a>
-            <a href="/reading" class="activity">
-                <img src="{{ url_for('static', filename='images/activity3.png') }}" alt="Reading" width="10px" height="10px"><br><br>
-                <span>Reading Assessment</span>
+            <a href="/reading" class="flex flex-col items-center bg-orange-500 text-black px-6 py-4 rounded-lg shadow-lg hover:bg-orange-600 transition">
+                <img src="{{ url_for('static', filename='images/activity3.png') }}" alt="Reading" class="w-20 h-20 rounded-md">
+                <span class="mt-3 text-lg font-medium">Reading Assessment</span>
             </a>
         </div>
     </div>

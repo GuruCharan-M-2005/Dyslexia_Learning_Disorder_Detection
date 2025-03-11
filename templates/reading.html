@@ -5,109 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dyslexia Detection</title>
-    <style>
-        .reading-class {
-            font-family: Arial, sans-serif;
-            background-color: black;
-            color: white;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-        .container {
-            max-width: 500px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
-        }
-
-        .reading-class h2 {
-            font-size: 24px;
-            color: #ffb700;
-        }
-
-        .button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #ffb700;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 10px;
-            color: black;
-        }
-
-        .button:hover {
-            background-color: #e69e00;
-        }
-
-        .feedback {
-            font-size: 18px;
-            font-weight: bold;
-            margin-top: 15px;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="reading-class">
-    <div class="container" id="text-screen">
-        <h2>Read the paragraph aloud:</h2>
-        <p id="paragraph">Click the button to start.</p>
-        <button class="button" onclick="startRecognition()">Start Speaking</button>
-        <p id="user-speech" class="feedback"></p>
-        <p id="feedback-message" class="feedback"></p>
+<body class=" text-white text-center flex items-center justify-center min-h-screen">
+    <div id="text-screen" class="max-w-md w-full  p-6 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold text-yellow-400">Read the paragraph aloud:</h2>
+        <p id="paragraph" class="text-black text-lg">Click the button to start.</p>
+        <button class="mt-4 bg-yellow-500 text-black px-4 py-2 rounded-lg hover:bg-yellow-600 transition" onclick="startRecognition()">
+            Start Speaking
+        </button>
+        <p id="user-speech" class="mt-4 text-black text-lg font-semibold"></p>
+        <p id="feedback-message" class="mt-4 text-black text-lg font-semibold"></p>
     </div>
 
     <script>
         let paragraphs = [
-            "The cat sat on the mat.",
-            "The dog ran to the hut.",
-            "The sun is hot today.",
-            "A big rat sat on a hat.",
-            "The kid hid in the box.",
-            "Pat the fat cat.",
-            "Hop on the top of the pot.",
-            "The bat sat with a rat.",
-            "The bug dug in the rug.",
-            "A fox in a box with socks.",
-            "The clock ticks on the wall.",
-            "Fred fed the red hen.",
-            "Sam sang a song.",
-            "Tom had a big drum.",
-            "The fish is in the dish.",
-            "The dog sat under the big red hat.",
-            "A fat cat ran up the tall hill.",
-            "Ben had ten red pens in his bag.",
-            "The sun is hot, and the boy got wet.",
-            "Jack packed a snack in his black sack.",
-            "The boy had a big ball.",
-            "Dad had a bad pad.",
-            "Ben put a pen in the pot.",
-            "Pam sat on a mat with a map.",
-            "The pig ran to the big pit.",
-            "She sells seashells by the seashore.",
-            "Ted fed the red hen.",
-            "A big bug dug in the mud.",
-            "The cat and the rat had a chat.",
-            "Tim put a big lid on the pot.",
-            "The man ran with the can.",
-            "Jim hid in the big pit.",
-            "The duck sat on the rock.",
-            "Ben met a red hen.",
-            "The kid had a big fig.",
-            "Betty bought a bit of butter.",
-            "Six slippery snails slid slowly.",
-            "Red lorry, yellow lorry.",
-            "A big black bug bit a big black bear.",
-            "She sees cheese and seashells."
+            "The cat sat on the mat.", "The dog ran to the hut.", "The sun is hot today.",
+            "A big rat sat on a hat.", "The kid hid in the box.", "Pat the fat cat.",
+            "Hop on the top of the pot.", "The bat sat with a rat.", "The bug dug in the rug.",
+            "A fox in a box with socks.", "The clock ticks on the wall.", "Fred fed the red hen."
         ];
 
-        // Shuffle and select 5 random questions
         let selectedParagraphs = [];
-        while (selectedParagraphs.length < 10) {
+        while (selectedParagraphs.length < 2) {
             let randomIndex = Math.floor(Math.random() * paragraphs.length);
             if (!selectedParagraphs.includes(paragraphs[randomIndex])) {
                 selectedParagraphs.push(paragraphs[randomIndex]);
@@ -154,7 +78,6 @@
             const userWords = userText.split(" ");
             let errors = 0;
 
-            // Count errors
             for (let i = 0; i < originalWords.length; i++) {
                 if (userWords[i] !== originalWords[i]) {
                     errors++;
@@ -164,17 +87,15 @@
             totalErrors += errors;
             currentIndex++;
 
-            // Show feedback
             let feedbackMessage = document.getElementById("feedback-message");
             if (errors > 5) {
-                feedbackMessage.innerHTML = "<span style='color: red;'>Major Dyslexia Detected</span><br>Move to the next paragraph.";
+                feedbackMessage.innerHTML = "<span class='text-red-500'>Major Dyslexia Detected</span><br>Move to the next paragraph.";
             } else if (errors > 2) {
-                feedbackMessage.innerHTML = "<span style='color: orange;'>Minor Dyslexia Detected</span><br>Keep practicing.";
+                feedbackMessage.innerHTML = "<span class='text-orange-400'>Minor Dyslexia Detected</span><br>Keep practicing.";
             } else {
-                feedbackMessage.innerHTML = "<span style='color: green;'>Good Job!</span><br>Next paragraph.";
+                feedbackMessage.innerHTML = "<span class='text-green-400'>Good Job!</span><br>Next paragraph.";
             }
 
-            // Move to next paragraph after 3 seconds
             setTimeout(() => {
                 if (currentIndex < selectedParagraphs.length) {
                     startRecognition();
@@ -185,20 +106,44 @@
         }
 
         function showFinalResult() {
+            let score=0;
             let resultMessage = "";
             if (totalErrors > 20) {
-                resultMessage = "<span style='color: red;'>Major Dyslexia Detected</span><br>Seek professional guidance.";
+                resultMessage = "<span class='text-red-500'>Major Dyslexia Detected</span><br>Seek professional guidance.";
+                score=3;
             } else if (totalErrors > 10) {
-                resultMessage = "<span style='color: orange;'>Minor Dyslexia Detected</span><br>Practice more and improve.";
+                resultMessage = "<span class='text-orange-400'>Minor Dyslexia Detected</span><br>Practice more and improve.";
+                score=6;
             } else {
-                resultMessage = "<span style='color: green;'>No Dyslexia Detected</span><br>Excellent reading skills!";
+                resultMessage = "<span class='text-green-400'>No Dyslexia Detected</span><br>Excellent reading skills!";
+                score=10;
             }
 
+            $.ajax({
+                url: "/submit_scores",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({
+                    assessment: 0,  
+                    pattern: 0,
+                    reading: score
+                }),
+                success: function(response) {
+                    console.log(response.message);
+                },
+                error: function(error) {
+                    console.log("Error:", error);
+                }
+            });
+
+
             document.getElementById("text-screen").innerHTML = `
-                <h2>Test Completed</h2>
-                <p>Total Errors: ${totalErrors}</p>
-                <p>${resultMessage}</p>
-                <button class="button" onclick="location.reload()">Restart Test</button>
+                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold text-yellow-400">Test Completed</h2>
+        <p class="mt-4 text-lg text-white">Total Errors: ${totalErrors}</p>
+        <p class="mt-2 text-lg text-white">${resultMessage}</p>
+        <button class="mt-4 bg-yellow-500 text-black px-4 py-2 rounded-lg hover:bg-yellow-600 transition" onclick="location.reload()">Restart Test</button>
+    </div>
             `;
         }
     </script>
