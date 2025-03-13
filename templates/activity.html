@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dyslexia Detection</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
 </head>
 <body class="bg-gray-100 text-gray-900">
     <div class="w-full flex items-center justify-between py-5 px-10 border-b border-gray-300">
@@ -27,6 +28,49 @@
                 <span class="mt-3 text-lg font-medium">Reading Assessment</span>
             </a>
         </div>
+        <button id="generate-report-btn" class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition">
+            Generate Assessment
+        </button>
+        <p id="status-message" class="mt-3 text-gray-700"></p>
     </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#generate-report-btn").click(function () {
+                $("#status-message")
+                    .text("Generating report... Please wait.")
+                    .removeClass("text-green-600 text-red-600")
+                    .addClass("text-blue-600"); 
+    
+                $.ajax({
+                    url: "/generate-report",
+                    type: "GET",
+                    xhrFields: {
+                        responseType: 'blob'
+                    },
+                    success: function (data, status, xhr) {
+                        let filename = "dyslexia_report.pdf";
+                        let blob = new Blob([data], { type: xhr.getResponseHeader("Content-Type") });
+                        let link = document.createElement("a");
+                        link.href = window.URL.createObjectURL(blob);
+                        link.download = filename;
+                        link.click();
+                        
+                        $("#status-message")
+                            .text("Report generated successfully! Downloading...")
+                            .removeClass("text-blue-600 text-green-600")
+                            .addClass("text-green-600"); 
+                    },
+                    error: function () {
+                        $("#status-message")
+                            .text("Failed to generate report. Try again.")
+                            .removeClass("text-blue-600 text-red-600")
+                            .addClass("text-red-600"); 
+                    }
+                });
+            });
+        });
+    </script>
+    
 </body>
 </html>

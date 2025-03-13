@@ -1,6 +1,8 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request, send_file
 import random
 import os
+import matplotlib.pyplot as plt
+from fpdf import FPDF
 import google.generativeai as genai
 from dotenv import load_dotenv
 from pymongo import MongoClient
@@ -19,25 +21,69 @@ def get_or_create_collection(db, collection_name):
 questions_collection = get_or_create_collection(db, "Assessment")
 patterns_collection = get_or_create_collection(db, "Pattern")
 users_collection = get_or_create_collection(db, "User")
+scores_collection = get_or_create_collection(db,"Scores")
 
 
 # AI SUGGESTIONS
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=GEMINI_API_KEY)
 
-def get_suggestions(score):
+
+def generate_graph(scores):
+    plt.figure(figsize=(6, 4))
+    numeric_scores = {k: v for k, v in scores.items() if isinstance(v, (int, float))}
+    categories = list(numeric_scores.keys())
+    values = list(numeric_scores.values())
+    plt.bar(categories, values, color=['blue', 'green', 'red'])
+    plt.xlabel("Assessment Types")
+    plt.ylabel("Scores")
+    plt.title("Dyslexia Assessment Scores")
+    graph_path = "temp_graph.png" 
+    plt.savefig(graph_path, format="png")
+    plt.close()  
+    return graph_path 
+
+def generate_ai_suggestion(scores):
     prompt = f"""
-    A user has taken a dyslexia assessment and scored {score}. 
-    Based on their score, provide three personalized suggestions to help them improve learning and reading.
-    Example:
-    - If the score is low, suggest simple reading exercises.
-    - If the score is high, suggest professional intervention.
-    Return the response in three lines without bullet points, using \n as a separator.
+    Given the following dyslexia assessment scores:
+    - Assessment: {scores['assessment']}
+    - Pattern: {scores['pattern']}
+    - Reading: {scores['reading']}
+    Provide a detailed report including analysis and recommendations.
     """
-    model = genai.GenerativeModel()
+    model = genai.GenerativeModel("models/gemini-1.5-pro")
     response = model.generate_content(prompt)
-    suggestions = response.text.strip().split("\n")[:3] 
-    return suggestions
+    return response.text.strip()
+
+
+def generate_pdf(scores, ai_suggestion):
+    pdf = FPDF()
+    pdf.set_auto_page_break(auto=True, margin=15)
+    pdf.add_page()
+    pdf.set_font("Arial", style='', size=12)
+    pdf.cell(200, 10, "Dyslexia Detection Report", ln=True, align='C')
+    pdf.ln(10)
+    pdf.set_font("Arial", size=10)
+    for key, value in scores.items():
+        pdf.cell(0, 10, f"{key}: {str(value)}", ln=True)
+    pdf.ln(10)
+    pdf.multi_cell(0, 10, f"AI Suggestion: {ai_suggestion}")
+    pdf.ln(10)
+    pdf.image(generate_graph(scores), x=10, y=None, w=150)
+    pdf_path = "dyslexia_report.pdf"
+    pdf.output(pdf_path)
+    return pdf_path
+
+
+
+@app.route("/generate-report", methods=["GET"])
+def generate_report():
+    scores_data = scores_collection.find_one({"id": "abc123"}, {"_id": 0})
+    if not scores_data:
+        return jsonify({"error": "No scores found"}), 404
+    ai_suggestion = generate_ai_suggestion(scores_data)
+    pdf_path = generate_pdf(scores_data, ai_suggestion)
+    return send_file(pdf_path, as_attachment=True)
 
 @app.route('/activity')
 def activity():
@@ -78,12 +124,6 @@ def get_patterns():
     patterns_collection = list(db.Pattern.find({}, {"_id": 0})) 
     shuffled_patterns = random.sample(patterns_collection, min(2, len(patterns_collection)))
     return jsonify(shuffled_patterns)
-
-@app.route('/get_suggestions', methods=['GET'])
-def fetch_suggestions():
-    score = int(request.args.get('score', 0))  
-    suggestions = get_suggestions(score)
-    return jsonify({"suggestions": suggestions})
 
 @app.route("/registerapi", methods=["POST"])
 def registerapi():
@@ -131,7 +171,6 @@ def submit_scores():
     assessment = data.get("assessment", 0)
     pattern = data.get("pattern", 0)
     reading = data.get("reading", 0)
-    scores_collection = db["Scores"]
     existing_scores = scores_collection.find_one({"id": "abc123"})
 
     if existing_scores:
