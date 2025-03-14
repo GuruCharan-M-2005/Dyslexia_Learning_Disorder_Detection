@@ -1,360 +1,364 @@
 [{
   "_id": {
-    "$oid": "67c075fd6395232aff37ea36"
+    "$oid": "67cf16b34d597d63901fe93f"
   },
-  "image": "https://tse1.mm.bing.net/th?id=OIP.iKEdZsVGxxPHhKA9pJ1gHgHaHZ&pid=Api&P=0&h=180",
-  "question": "What color is the sun?",
-  "choice1": "Yellow",
-  "choice2": "Blue",
-  "choice3": "Green",
-  "choice4": "Red",
-  "answer": "Yellow"
+  "image": "https://tse2.mm.bing.net/th?id=OIP.LyT7AeqQ8qcCjHlhwSzKSgHaEK&pid=Api&P=0&h=180",
+  "question": "Which fish is known as the 'King of the Ocean'?",
+  "choices": [
+    "Shark",
+    "Whale",
+    "Dolphin",
+    "Swordfish"
+  ],
+  "answer": "Shark"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea37"
+    "$oid": "67cf16b34d597d63901fe940"
   },
-  "image": "https://tse3.mm.bing.net/th?id=OIP.TzP2op3lkhlTh6oOHamacAHaHa&pid=Api&P=0&h=180",
-  "question": "What sound does a cat make?",
-  "choice1": "Woof",
-  "choice2": "Meow",
-  "choice3": "Moo",
-  "choice4": "Quack",
-  "answer": "Meow"
+  "image": "https://tse4.mm.bing.net/th?id=OIP.7tcjCdApGddFpjQocfzN0AHaE8&pid=Api&P=0&h=180",
+  "question": "Which metal is most attracted to magnets?",
+  "choices": [
+    "Gold",
+    "Silver",
+    "Iron",
+    "Copper"
+  ],
+  "answer": "Iron"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea38"
+    "$oid": "67cf16b34d597d63901fe941"
   },
-  "image": "https://tse3.mm.bing.net/th?id=OIP.gJq0aSbv2Gxu7mtckG3PfgHaFX&pid=Api&P=0&h=180",
-  "question": "Which is a fruit?",
-  "choice1": "Apple",
-  "choice2": "Carrot",
-  "choice3": "Broccoli",
-  "choice4": "Potato",
-  "answer": "Apple"
+  "image": "https://tse2.mm.bing.net/th?id=OIP.lxAdLC5nT9PsWsQ04wJVEgHaHa&pid=Api&P=0&h=180",
+  "question": "What do you call a person who collects coins?",
+  "choices": [
+    "Numismatist",
+    "Archaeologist",
+    "Historian",
+    "Economist"
+  ],
+  "answer": "Numismatist"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea39"
+    "$oid": "67cf16b34d597d63901fe942"
   },
-  "image": "https://tse2.mm.bing.net/th?id=OIP.jln6a9t6OfNrNJWVlQiS9gHaHa&pid=Api&P=0&h=180",
-  "question": "What number comes after 2?",
-  "choice1": "1",
-  "choice2": "3",
-  "choice3": "5",
-  "choice4": "0",
-  "answer": "3"
+  "image": "https://tse2.mm.bing.net/th?id=OIP.wjQAXvufK6BWT-W0SgNpQQHaEK&pid=Api&P=0&h=180",
+  "question": "Which insect transforms from a caterpillar into a butterfly?",
+  "choices": [
+    "Bee",
+    "Ant",
+    "Caterpillar",
+    "Grasshopper"
+  ],
+  "answer": "Caterpillar"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea3a"
+    "$oid": "67cf16b34d597d63901fe943"
   },
-  "image": "https://tse1.mm.bing.net/th?id=OIP.ESnKED-YaJF652_mDB7pgwHaIC&pid=Api&P=0&h=180",
-  "question": "How many eyes do you have?",
-  "choice1": "1",
-  "choice2": "2",
-  "choice3": "3",
-  "choice4": "4",
-  "answer": "2"
+  "image": "https://tse2.mm.bing.net/th?id=OIP.Y3Ru7OkJ-n0YI8pbeqUcdQHaE9&pid=Api&P=0&h=180",
+  "question": "Which animal is known for hopping?",
+  "choices": [
+    "Rabbit",
+    "Kangaroo",
+    "Deer",
+    "Frog"
+  ],
+  "answer": "Kangaroo"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea3b"
+    "$oid": "67cf16b34d597d63901fe944"
   },
-  "image": "https://tse4.mm.bing.net/th?id=OIP.suufGLOuyD8Ge6iYG_2xHwHaEe&pid=Api&P=0&h=180",
-  "question": "Which animal barks?",
-  "choice1": "Cat",
-  "choice2": "Dog",
-  "choice3": "Cow",
-  "choice4": "Duck",
-  "answer": "Dog"
+  "image": "https://tse3.mm.bing.net/th?id=OIP.R6lgBFgYw7FtZAe-_gDurwHaE8&pid=Api&P=0&h=180",
+  "question": "What do we use to protect ourselves from rain?",
+  "choices": [
+    "Hat",
+    "Umbrella",
+    "Scarf",
+    "Raincoat"
+  ],
+  "answer": "Umbrella"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea3c"
+    "$oid": "67cf16b34d597d63901fe945"
   },
-  "image": "https://tse4.mm.bing.net/th?id=OIP.yldbxZVxOCK5KIDbQhmIGgHaJR&pid=Api&P=0&h=180",
-  "question": "What color are bananas?",
-  "choice1": "Red",
-  "choice2": "Blue",
-  "choice3": "Yellow",
-  "choice4": "Green",
-  "answer": "Yellow"
+  "image": "https://tse3.mm.bing.net/th?id=OIP.yeNhbENn-By7eSYNKzA2UQHaEK&pid=Api&P=0&h=180",
+  "question": "Which sport is played with a round ball and two goals?",
+  "choices": [
+    "Cricket",
+    "Tennis",
+    "Football",
+    "Basketball"
+  ],
+  "answer": "Football"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea3d"
+    "$oid": "67cf16b34d597d63901fe946"
   },
-  "image": "https://easydrawingart.com/wp-content/uploads/2019/08/How-to-draw-a-human-2.jpg",
-  "question": "How many hands do you have?",
-  "choice1": "2",
-  "choice2": "4",
-  "choice3": "6",
-  "choice4": "1",
-  "answer": "2"
+  "image": "https://tse2.mm.bing.net/th?id=OIP.IgYKH09M7VfhXWDg6sVmkAHaFC&pid=Api&P=0&h=180",
+  "question": "Which animal has no legs but can slither?",
+  "choices": [
+    "Lizard",
+    "Snake",
+    "Frog",
+    "Caterpillar"
+  ],
+  "answer": "Snake"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea3e"
+    "$oid": "67cf16b34d597d63901fe947"
   },
-  "image": "https://tse2.mm.bing.net/th?id=OIP.8-k5MhblTFcab2B44CrL6gHaEK&pid=Api&P=0&h=180",
-  "question": "Which is bigger, an elephant or a mouse?",
-  "choice1": "Elephant",
-  "choice2": "Mouse",
-  "choice3": "Same size",
-  "choice4": "Fish",
-  "answer": "Elephant"
+  "image": "https://tse2.mm.bing.net/th?id=OIP.bcOP7ZTpLAyyl3tKpdk5gAHaFB&pid=Api&P=0&h=180",
+  "question": "Which vehicle moves on tracks?",
+  "choices": [
+    "Car",
+    "Bus",
+    "Train",
+    "Bicycle"
+  ],
+  "answer": "Train"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea3f"
+    "$oid": "67cf16b34d597d63901fe948"
   },
-  "image": "https://tse3.mm.bing.net/th?id=OIP.yfeFjc5iO5yC6A_sQ2Xm7AAAAA&pid=Api&P=0&h=180",
-  "question": "Where do fish live?",
-  "choice1": "Sky",
-  "choice2": "Water",
-  "choice3": "Land",
-  "choice4": "Tree",
-  "answer": "Water"
+  "image": "https://tse2.mm.bing.net/th?id=OIP.-JDnFNBXzr1kVGPadvcnkAHaJ2&pid=Api&P=0&h=180",
+  "question": "What do you use to see your reflection?",
+  "choices": [
+    "Glass",
+    "Mirror",
+    "Water",
+    "Window"
+  ],
+  "answer": "Mirror"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea40"
+    "$oid": "67cf16b34d597d63901fe949"
   },
-  "image": "https://tse1.mm.bing.net/th?id=OIP.zN_vo1rdpxYUM1MrvfEeuAHaHa&pid=Api&P=0&h=180",
-  "question": "What sound does a cow make?",
-  "choice1": "Moo",
-  "choice2": "Meow",
-  "choice3": "Woof",
-  "choice4": "Quack",
-  "answer": "Moo"
+  "image": "https://tse3.mm.bing.net/th?id=OIP.3hTkhdPZ8PRL3R6saGGNAgHaE7&pid=Api&P=0&h=180",
+  "question": "Which animal can fly and has feathers?",
+  "choices": [
+    "Bird",
+    "Fish",
+    "Dog",
+    "Horse"
+  ],
+  "answer": "Bird"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea41"
+    "$oid": "67cf16b34d597d63901fe94a"
   },
-  "image": "https://tse2.mm.bing.net/th?id=OIP.pFKRhQ-BV60LU6FUBu6_AQHaHa&pid=Api&P=0&h=180",
-  "question": "What color is grass?",
-  "choice1": "Green",
-  "choice2": "Blue",
-  "choice3": "Purple",
-  "choice4": "Red",
-  "answer": "Green"
+  "image": "https://tse1.mm.bing.net/th?id=OIP.NTO1-yC1feYI5o-WmtLt8QHaHv&pid=Api&P=0&h=180",
+  "question": "Which fruit is large, green outside, and red inside?",
+  "choices": [
+    "Apple",
+    "Banana",
+    "Watermelon",
+    "Mango"
+  ],
+  "answer": "Watermelon"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea42"
+    "$oid": "67cf16b34d597d63901fe94b"
   },
-  "image": "https://tse4.mm.bing.net/th?id=OIP.6iV7cFgtEGCDYJ50I5n61wHaF9&pid=Api&P=0&h=180",
-  "question": "Which is a vegetable?",
-  "choice1": "Apple",
-  "choice2": "Carrot",
-  "choice3": "Banana",
-  "choice4": "Orange",
-  "answer": "Carrot"
+  "image": "https://tse3.mm.bing.net/th?id=OIP.NPkApRXIEqG7tz6VwbLN8wHaE5&pid=Api&P=0&h=180",
+  "question": "Which animal has the longest neck?",
+  "choices": [
+    "Elephant",
+    "Kangaroo",
+    "Giraffe",
+    "Horse"
+  ],
+  "answer": "Giraffe"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea43"
+    "$oid": "67cf16b34d597d63901fe94c"
   },
-  "image": "https://tse4.mm.bing.net/th?id=OIP.YBPQgHYo0blhl-Y_cs37qQHaE7&pid=Api&P=0&h=180",
-  "question": "What do you use to eat soup?",
-  "choice1": "Fork",
-  "choice2": "Spoon",
-  "choice3": "Knife",
-  "choice4": "Plate",
-  "answer": "Spoon"
+  "image": "https://tse4.mm.bing.net/th?id=OIP.TVoBc5HyOUvMwOOVgKw0dgHaFj&pid=Api&P=0&h=180",
+  "question": "Which vehicle is used by firefighters?",
+  "choices": [
+    "Ambulance",
+    "Fire Truck",
+    "Police Car",
+    "Bus"
+  ],
+  "answer": "Fire Truck"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea44"
+    "$oid": "67cf16b34d597d63901fe94d"
   },
-  "image": "https://tse4.mm.bing.net/th?id=OIP.oX4TFbay100bTuNNjhdQ6gHaHa&pid=Api&P=0&h=180",
-  "question": "What shape is a ball?",
-  "choice1": "Square",
-  "choice2": "Triangle",
-  "choice3": "Circle",
-  "choice4": "Rectangle",
-  "answer": "Circle"
+  "image": "https://tse1.mm.bing.net/th?id=OIP.STj3nNZdIeqTs4-1fUdbsQHaEo&pid=Api&P=0&h=180",
+  "question": "What shines in the night sky along with the moon?",
+  "choices": [
+    "Sun",
+    "Clouds",
+    "Stars",
+    "Rainbow"
+  ],
+  "answer": "Stars"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea45"
+    "$oid": "67cf16b34d597d63901fe94e"
   },
-  "image": "https://tse4.mm.bing.net/th?id=OIP.T544Qdf-lY8u-zm_69RyDwAAAA&pid=Api&P=0&h=180",
-  "question": "What do you wear on your feet?",
-  "choice1": "Hat",
-  "choice2": "Shoes",
-  "choice3": "Gloves",
-  "choice4": "Socks",
-  "answer": "Shoes"
+  "image": "https://tse1.mm.bing.net/th?id=OIP.bm5g_XPeNngcAK0FBXtwsAHaE8&pid=Api&P=0&h=180",
+  "question": "Which animal can jump high and live in water and land?",
+  "choices": [
+    "Crocodile",
+    "Frog",
+    "Snake",
+    "Fish"
+  ],
+  "answer": "Frog"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea46"
+    "$oid": "67cf16b34d597d63901fe94f"
   },
-  "image": "https://tse4.mm.bing.net/th?id=OIP.UgsQBApUUtGAhdgt-WIfQgHaHa&pid=Api&P=0&h=180",
-  "question": "Which is a color?",
-  "choice1": "Table",
-  "choice2": "Red",
-  "choice3": "House",
-  "choice4": "Toy",
-  "answer": "Red"
+  "image": "https://tse3.mm.bing.net/th?id=OIP.47efzn1OnBoMToje_jG7AAHaEq&pid=Api&P=0&h=180",
+  "question": "Which vehicle has two wheels and is pedaled?",
+  "choices": [
+    "Car",
+    "Bike",
+    "Bicycle",
+    "Train"
+  ],
+  "answer": "Bicycle"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea47"
+    "$oid": "67cf16b34d597d63901fe950"
   },
-  "image": "https://tse1.mm.bing.net/th?id=OIP.Ib6DOQ3PoqdYhFw85J_TrgHaEW&pid=Api&P=0&h=180",
-  "question": "What animal says 'Moo'?",
-  "choice1": "Sheep",
-  "choice2": "Cat",
-  "choice3": "Cow",
-  "choice4": "Dog",
+  "image": "https://tse1.mm.bing.net/th?id=OIP.pXO5rBMR29hnT-D8LxpiZgHaFj&pid=Api&P=0&h=180",
+  "question": "Which bird is known for mimicking human speech?",
+  "choices": [
+    "Crow",
+    "Parrot",
+    "Owl",
+    "Pigeon"
+  ],
+  "answer": "Parrot"
+},
+{
+  "_id": {
+    "$oid": "67cf16b34d597d63901fe951"
+  },
+  "image": "https://tse1.mm.bing.net/th?id=OIP.vPF7ld431wrURBqez-OZ1wHaEK&pid=Api&P=0&h=180",
+  "question": "What does water turn into when frozen?",
+  "choices": [
+    "Steam",
+    "Snow",
+    "Ice",
+    "Rain"
+  ],
+  "answer": "Ice"
+},
+{
+  "_id": {
+    "$oid": "67cf16b34d597d63901fe952"
+  },
+  "image": "https://tse1.mm.bing.net/th?id=OIP.cLayN6B5OVYUprKV82WnRgHaFs&pid=Api&P=0&h=180",
+  "question": "What do we use to write in a notebook?",
+  "choices": [
+    "Pen",
+    "Pencil",
+    "Brush",
+    "Marker"
+  ],
+  "answer": "Pencil"
+},
+{
+  "_id": {
+    "$oid": "67cf16b34d597d63901fe953"
+  },
+  "image": "https://tse3.mm.bing.net/th?id=OIP.3rRVOxsAum9tsPOA9C-G8gHaFx&pid=Api&P=0&h=180",
+  "question": "Which animal is known to provide milk?",
+  "choices": [
+    "Dog",
+    "Horse",
+    "Cow",
+    "Cat"
+  ],
   "answer": "Cow"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea48"
+    "$oid": "67cf16b34d597d63901fe954"
   },
-  "image": "https://tse3.mm.bing.net/th?id=OIP.SGCPAwcc6yudCZC2-SB_ywHaHw&pid=Api&P=0&h=180",
-  "question": "What do you use to brush your teeth?",
-  "choice1": "Comb",
-  "choice2": "Toothbrush",
-  "choice3": "Spoon",
-  "choice4": "Shampoo",
-  "answer": "Toothbrush"
+  "image": "https://tse3.mm.bing.net/th?id=OIP.XNIy040nKzTCc1MC2N_PnQHaE8&pid=Api&P=0&h=180",
+  "question": "Where do children go to study?",
+  "choices": [
+    "Hospital",
+    "School",
+    "Park",
+    "Market"
+  ],
+  "answer": "School"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea49"
+    "$oid": "67cf16b34d597d63901fe955"
   },
-  "image": "https://tse4.mm.bing.net/th?id=OIP.CIac5BAbYhrvBddLTcoNxAHaEW&pid=Api&P=0&h=180",
-  "question": "How many wheels does a car have?",
-  "choice1": "2",
-  "choice2": "3",
-  "choice3": "4",
-  "choice4": "5",
-  "answer": "4"
+  "image": "https://tse3.mm.bing.net/th?id=OIP.Ef84_vxHZD3m_AaZlLc27gHaE8&pid=Api&P=0&h=180",
+  "question": "Which sweet treat is made from cocoa?",
+  "choices": [
+    "Candy",
+    "Chocolate",
+    "Cake",
+    "Ice Cream"
+  ],
+  "answer": "Chocolate"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea4a"
+    "$oid": "67cf16b34d597d63901fe956"
   },
-  "image": "https://tse3.mm.bing.net/th?id=OIP.Or3DuhEPAGJVUH5jPbnsgQHaFV&pid=Api&P=0&h=180",
-  "question": "What is the opposite of 'Up'?",
-  "choice1": "Down",
-  "choice2": "Left",
-  "choice3": "Right",
-  "choice4": "Straight",
-  "answer": "Down"
+  "image": "https://tse4.mm.bing.net/th?id=OIP.ujDYD3AKXCFSp50pASqeOwHaEK&pid=Api&P=0&h=180",
+  "question": "Which vehicle is used to travel on water?",
+  "choices": [
+    "Bus",
+    "Car",
+    "Boat",
+    "Train"
+  ],
+  "answer": "Boat"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea4b"
+    "$oid": "67cf16b34d597d63901fe957"
   },
-  "image": "https://tse3.mm.bing.net/th?id=OIP.7kUDPX3-LPUlLWdHElG1GAHaF7&pid=Api&P=0&h=180",
-  "question": "What is 1 + 1?",
-  "choice1": "1",
-  "choice2": "2",
-  "choice3": "3",
-  "choice4": "4",
-  "answer": "2"
+  "image": "https://tse1.mm.bing.net/th?id=OIP.3DNaRuK2pT0RoAwffwNljQHaFL&pid=Api&P=0&h=180",
+  "question": "What falls from the sky when it rains?",
+  "choices": [
+    "Snow",
+    "Water",
+    "Sunlight",
+    "Wind"
+  ],
+  "answer": "Water"
 },
 {
   "_id": {
-    "$oid": "67c075fd6395232aff37ea4c"
+    "$oid": "67cf16b34d597d63901fe958"
   },
-  "image": "https://helpingwithmath.com/wp-content/uploads/2022/03/image-109.png",
-  "question": "Which shape has four equal sides?",
-  "choice1": "Triangle",
-  "choice2": "Rectangle",
-  "choice3": "Circle",
-  "choice4": "Square",
-  "answer": "Square"
-},
-{
-  "_id": {
-    "$oid": "67c075fd6395232aff37ea4d"
-  },
-  "image": "https://tse2.mm.bing.net/th?id=OIP.ZfuC4RnPRyyKHJ9co6w-PQHaFS&pid=Api&P=0&h=180",
-  "question": "How many legs does a dog have?",
-  "choice1": "2",
-  "choice2": "4",
-  "choice3": "6",
-  "choice4": "8",
-  "answer": "4"
-},
-{
-  "_id": {
-    "$oid": "67c075fd6395232aff37ea4e"
-  },
-  "image": "https://tse3.mm.bing.net/th?id=OIP.7kUDPX3-LPUlLWdHElG1GAHaF7&pid=Api&P=0&h=180",
-  "question": "What number comes after 5?",
-  "choice1": "3",
-  "choice2": "6",
-  "choice3": "7",
-  "choice4": "8",
-  "answer": "6"
-},
-{
-  "_id": {
-    "$oid": "67c075fd6395232aff37ea4f"
-  },
-  "image": "https://tse3.mm.bing.net/th?id=OIP.2_9yJhkcUr2y9KkFhlHJ-wHaEx&pid=Api&P=0&h=180",
-  "question": "What is the opposite of 'Hot'?",
-  "choice1": "Cold",
-  "choice2": "Warm",
-  "choice3": "Soft",
-  "choice4": "Hard",
-  "answer": "Cold"
-},
-{
-  "_id": {
-    "$oid": "67c075fd6395232aff37ea50"
-  },
-  "image": "https://tse3.mm.bing.net/th?id=OIP.7kUDPX3-LPUlLWdHElG1GAHaF7&pid=Api&P=0&h=180",
-  "question": "What is 10 - 3?",
-  "choice1": "5",
-  "choice2": "7",
-  "choice3": "8",
-  "choice4": "6",
-  "answer": "7"
-},
-{
-  "_id": {
-    "$oid": "67c075fd6395232aff37ea51"
-  },
-  "image": "https://tse2.mm.bing.net/th?id=OIP.OPmWmIwjFejQUyTwfiMkyAHaD4&pid=Api&P=0&h=180",
-  "question": "Which is a primary color?",
-  "choice1": "Purple",
-  "choice2": "Red",
-  "choice3": "Brown",
-  "choice4": "Pink",
-  "answer": "Red"
-},
-{
-  "_id": {
-    "$oid": "67c075fd6395232aff37ea52"
-  },
-  "image": "https://tse2.mm.bing.net/th?id=OIP.wOTei2g-Ch2wuzPScyyu5wHaLH&pid=Api&P=0&h=180",
-  "question": "What is the capital of France?",
-  "choice1": "Berlin",
-  "choice2": "Madrid",
-  "choice3": "Paris",
-  "choice4": "Rome",
-  "answer": "Paris"
-},
-{
-  "_id": {
-    "$oid": "67c075fd6395232aff37ea53"
-  },
-  "image": "https://tse1.mm.bing.net/th?id=OIP.CvEbtxW39FjKR7jdNICIUwAAAA&pid=Api&P=0&h=180",
-  "question": "Which month has 28 or 29 days?",
-  "choice1": "January",
-  "choice2": "February",
-  "choice3": "March",
-  "choice4": "April",
-  "answer": "February"
+  "image": "https://tse1.mm.bing.net/th?id=OIP.v_GffcSZFEwJqVSePcGNOgHaE9&pid=Api&P=0&h=180",
+  "question": "Which body part helps us to hear?",
+  "choices": [
+    "Eyes",
+    "Ears",
+    "Nose",
+    "Mouth"
+  ],
+  "answer": "Ears"
 }]

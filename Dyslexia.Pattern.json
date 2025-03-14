@@ -1,257 +1,1445 @@
 [{
   "_id": {
-    "$oid": "67c0761b6395232aff37ea56"
-  },
-  "question": "Select the next pattern in the sequence:",
-  "sequence": [
-    "⬛",
-    "⚫",
-    "⬛",
-    "?"
-  ],
-  "options": {
-    "square": "⬛ Square",
-    "circle": "⚫ Circle"
-  },
-  "answer": "circle"
-},
-{
-  "_id": {
-    "$oid": "67c0761b6395232aff37ea57"
-  },
-  "question": "Which shape comes next?",
-  "sequence": [
-    "🔺",
-    "🔵",
-    "🔺",
-    "?"
-  ],
-  "options": {
-    "triangle": "🔺 Triangle",
-    "circle": "🔵 Circle"
-  },
-  "answer": "circle"
-},
-{
-  "_id": {
-    "$oid": "67c0761b6395232aff37ea58"
-  },
-  "question": "Pick the correct pattern:",
-  "sequence": [
-    "🟢",
-    "🟡",
-    "🟢",
-    "?"
-  ],
-  "options": {
-    "green": "🟢 Green",
-    "yellow": "🟡 Yellow"
-  },
-  "answer": "yellow"
-},
-{
-  "_id": {
-    "$oid": "67c0761b6395232aff37ea59"
+    "$oid": "67cf14734d597d63901fe8f1"
   },
   "question": "What comes next?",
   "sequence": [
-    "🟥",
-    "🟨",
-    "🟥",
-    "?"
-  ],
-  "options": {
-    "red": "🟥 Red",
-    "yellow": "🟨 Yellow"
-  },
-  "answer": "yellow"
-},
-{
-  "_id": {
-    "$oid": "67c0761b6395232aff37ea5a"
-  },
-  "question": "Identify the pattern:",
-  "sequence": [
-    "🔶",
-    "🔷",
-    "🔶",
-    "?"
-  ],
-  "options": {
-    "diamond": "🔷 Diamond",
-    "hexagon": "🔶 Hexagon"
-  },
-  "answer": "diamond"
-},
-{
-  "_id": {
-    "$oid": "67c0761b6395232aff37ea5b"
-  },
-  "question": "Next shape?",
-  "sequence": [
+    "🟢",
     "🔵",
-    "🔴",
+    "🟢",
     "🔵",
     "?"
   ],
   "options": {
-    "blue": "🔵 Blue",
-    "red": "🔴 Red"
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
   },
-  "answer": "red"
+  "answer": "A"
 },
 {
   "_id": {
-    "$oid": "67c0761b6395232aff37ea5c"
+    "$oid": "67cf14734d597d63901fe8f2"
   },
-  "question": "Complete the sequence:",
+  "question": "Select the next number:",
   "sequence": [
-    "⬜",
-    "⬛",
-    "⬜",
+    2,
+    4,
+    8,
+    16,
     "?"
   ],
   "options": {
-    "white": "⬜ White",
-    "black": "⬛ Black"
+    "A": 32,
+    "B": 30,
+    "C": 20
   },
-  "answer": "black"
+  "answer": "A"
 },
 {
   "_id": {
-    "$oid": "67c0761b6395232aff37ea5d"
+    "$oid": "67cf14734d597d63901fe8f3"
   },
-  "question": "What follows?",
+  "question": "Find the missing symbol:",
   "sequence": [
-    "🟧",
-    "🟦",
-    "🟧",
+    "❤️",
+    "💙",
+    "💛",
+    "❤️",
+    "💙",
     "?"
   ],
   "options": {
-    "orange": "🟧 Orange",
-    "blue": "🟦 Blue"
+    "A": "💛",
+    "B": "❤️",
+    "C": "💙"
   },
-  "answer": "blue"
+  "answer": "A"
 },
 {
   "_id": {
-    "$oid": "67c0761b6395232aff37ea5e"
+    "$oid": "67cf14734d597d63901fe8f4"
   },
-  "question": "Guess the missing shape:",
-  "sequence": [
-    "🟠",
-    "🟣",
-    "🟠",
-    "?"
-  ],
-  "options": {
-    "purple": "🟣 Purple",
-    "orange": "🟠 Orange"
-  },
-  "answer": "purple"
-},
-{
-  "_id": {
-    "$oid": "67c0761b6395232aff37ea5f"
-  },
-  "question": "Find the next pattern:",
-  "sequence": [
-    "⬜",
-    "⬛",
-    "⬛",
-    "⬜",
-    "⬜",
-    "?"
-  ],
-  "options": {
-    "black": "⬛ Black",
-    "white": "⬜ White"
-  },
-  "answer": "black"
-},
-{
-  "_id": {
-    "$oid": "67c0761b6395232aff37ea60"
-  },
-  "question": "What is the missing shape?",
-  "sequence": [
-    "🔺",
-    "🔻",
-    "🔺",
-    "?"
-  ],
-  "options": {
-    "up": "🔺 Up Triangle",
-    "down": "🔻 Down Triangle"
-  },
-  "answer": "down"
-},
-{
-  "_id": {
-    "$oid": "67c0761b6395232aff37ea61"
-  },
-  "question": "Choose the correct pattern:",
-  "sequence": [
-    "🟥",
-    "🟩",
-    "🟦",
-    "?"
-  ],
-  "options": {
-    "blue": "🟦 Blue",
-    "green": "🟩 Green"
-  },
-  "answer": "green"
-},
-{
-  "_id": {
-    "$oid": "67c0761b6395232aff37ea62"
-  },
-  "question": "Complete the set:",
-  "sequence": [
-    "🟤",
-    "⚪",
-    "🟤",
-    "?"
-  ],
-  "options": {
-    "white": "⚪ White",
-    "brown": "🟤 Brown"
-  },
-  "answer": "white"
-},
-{
-  "_id": {
-    "$oid": "67c0761b6395232aff37ea63"
-  },
-  "question": "Identify the missing pattern:",
-  "sequence": [
-    "🟪",
-    "🟨",
-    "🟪",
-    "?"
-  ],
-  "options": {
-    "yellow": "🟨 Yellow",
-    "purple": "🟪 Purple"
-  },
-  "answer": "yellow"
-},
-{
-  "_id": {
-    "$oid": "67c0761b6395232aff37ea64"
-  },
-  "question": "Which shape continues the pattern?",
+  "question": "What comes next?",
   "sequence": [
     "🟢",
-    "🟠",
+    "🔵",
     "🟢",
+    "🔵",
     "?"
   ],
   "options": {
-    "green": "🟢 Green",
-    "orange": "🟠 Orange"
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
   },
-  "answer": "orange"
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe8f5"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe8f6"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe8f7"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe8f8"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe8f9"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe8fa"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe8fb"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe8fc"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe8fd"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe8fe"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe8ff"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe900"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe901"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe902"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe903"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe904"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe905"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe906"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe907"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe908"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe909"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe90a"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe90b"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe90c"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe90d"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe90e"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe90f"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe910"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe911"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe912"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe913"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe914"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe915"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe916"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe917"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe918"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe919"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe91a"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe91b"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe91c"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe91d"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe91e"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe91f"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe920"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe921"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe922"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe923"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe924"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe925"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe926"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe927"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe928"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe929"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe92a"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe92b"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe92c"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe92d"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe92e"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe92f"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe930"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe931"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe932"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe933"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe934"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe935"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe936"
+  },
+  "question": "Find the missing number:",
+  "sequence": [
+    1,
+    3,
+    5,
+    7,
+    "?"
+  ],
+  "options": {
+    "A": 8,
+    "B": 9,
+    "C": 10
+  },
+  "answer": "B"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe937"
+  },
+  "question": "Select the next letter:",
+  "sequence": [
+    "B",
+    "D",
+    "F",
+    "H",
+    "?"
+  ],
+  "options": {
+    "A": "I",
+    "B": "J",
+    "C": "K"
+  },
+  "answer": "B"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe938"
+  },
+  "question": "What comes next in the number series10152025303540455055606570?",
+  "sequence": [
+    5,
+    10,
+    15,
+    20,
+    "?"
+  ],
+  "options": {
+    "A": 25,
+    "B": 30,
+    "C": 35
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe939"
+  },
+  "question": "What comes next in the number series6111621263136414651566166?",
+  "sequence": [
+    2,
+    4,
+    6,
+    8,
+    "?"
+  ],
+  "options": {
+    "A": 10,
+    "B": 12,
+    "C": 14
+  },
+  "answer": "A"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe93a"
+  },
+  "question": "Which letter comes next in the series7121722273237424752576267?",
+  "sequence": [
+    "A",
+    "C",
+    "E",
+    "G",
+    "?"
+  ],
+  "options": {
+    "A": "H",
+    "B": "I",
+    "C": "J"
+  },
+  "answer": "B"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe93b"
+  },
+  "question": "Find the missing number:",
+  "sequence": [
+    1,
+    3,
+    5,
+    7,
+    "?"
+  ],
+  "options": {
+    "A": 8,
+    "B": 9,
+    "C": 10
+  },
+  "answer": "B"
+},
+{
+  "_id": {
+    "$oid": "67cf14734d597d63901fe93c"
+  },
+  "question": "What comes next?",
+  "sequence": [
+    "🟢",
+    "🔵",
+    "🟢",
+    "🔵",
+    "?"
+  ],
+  "options": {
+    "A": "🟢",
+    "B": "🔵",
+    "C": "🟠"
+  },
+  "answer": "A"
 }]

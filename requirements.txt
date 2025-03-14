@@ -1,5 +1,6 @@
 Flask
-Flask-Cors
-pymongo
+matplotlib
+fpdf
 python-dotenv
+pymongo
 google-generativeai
