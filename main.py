@@ -60,14 +60,39 @@ def generate_pdf(scores, ai_suggestion):
     pdf = FPDF()
     pdf.set_auto_page_break(auto=True, margin=15)
     pdf.add_page()
-    pdf.set_font("Arial", style='', size=12)
+    pdf.set_font("Arial", style='B', size=15)
     pdf.cell(200, 10, "Dyslexia Detection Report", ln=True, align='C')
     pdf.ln(10)
+    pdf.set_font("Arial", "B", 12)
+    pdf.cell(0, 10, "Assessment Scores:", ln=True)
     pdf.set_font("Arial", size=10)
     for key, value in scores.items():
-        pdf.cell(0, 10, f"{key}: {str(value)}", ln=True)
+        if value!="abc123":
+            pdf.cell(0, 10, f"{key}: {str(value)}", ln=True)
     pdf.ln(10)
-    pdf.multi_cell(0, 10, f"AI Suggestion: {ai_suggestion}")
+    markdown_lines = ai_suggestion.split("\n")
+    for line in markdown_lines:
+        if line.startswith("# "): 
+            pdf.set_font("Arial", "B", 14)
+            pdf.cell(0, 10, line[2:], ln=True)
+        elif line.startswith("## "): 
+            pdf.set_font("Arial", "B", 12)
+            pdf.cell(0, 10, line[3:], ln=True)
+        else:
+            font_style = ""
+            if "***" in line: 
+                font_style = "BI"
+                line = line.replace("***", "")
+            elif "**" in line: 
+                font_style = "B"
+                line = line.replace("**", "")
+            elif "*" in line:  
+                font_style = "I"
+                line = line.replace("*", "")
+            
+            pdf.set_font("Arial", font_style, 10)
+            pdf.multi_cell(0, 10, line)
+        pdf.ln(2)
     pdf.ln(10)
     pdf.image(generate_graph(scores), x=10, y=None, w=150)
     pdf_path = "dyslexia_report.pdf"
