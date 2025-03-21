@@ -118,23 +118,10 @@
                 resultMessage = "<span class='text-green-400'>No Dyslexia Detected</span><br>Excellent reading skills!";
                 score=10;
             }
-
-            $.ajax({
-                url: "/submit_scores",
-                type: "POST",
-                contentType: "application/json",
-                data: JSON.stringify({
-                    assessment: 0,  
-                    pattern: 0,
-                    reading: score
-                }),
-                success: function(response) {
-                    console.log(response.message);
-                },
-                error: function(error) {
-                    console.log("Error:", error);
-                }
-            });
+            let scores = localStorage.getItem("scores");
+            scores = scores ? JSON.parse(scores) : { assessment: 0, pattern: 0, reading: 0 }
+            scores["reading"] = Math.max(scores["reading"], score);  
+            localStorage.setItem("scores", JSON.stringify(scores));  
 
 
             document.getElementById("text-screen").innerHTML = `

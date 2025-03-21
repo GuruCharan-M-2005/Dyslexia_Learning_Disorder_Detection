@@ -20,9 +20,6 @@ def get_or_create_collection(db, collection_name):
 
 questions_collection = get_or_create_collection(db, "Assessment")
 patterns_collection = get_or_create_collection(db, "Pattern")
-users_collection = get_or_create_collection(db, "User")
-scores_collection = get_or_create_collection(db,"Scores")
-
 
 # AI SUGGESTIONS
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
@@ -101,9 +98,9 @@ def generate_pdf(scores, ai_suggestion):
 
 
 
-@app.route("/generate-report", methods=["GET"])
+@app.route("/generate-report", methods=["POST"])
 def generate_report():
-    scores_data = scores_collection.find_one({"id": "abc123"}, {"_id": 0})
+    scores_data = request.json 
     if not scores_data:
         return jsonify({"error": "No scores found"}), 404
     ai_suggestion = generate_ai_suggestion(scores_data)
@@ -134,10 +131,6 @@ def landing():
 def onboarding():
     return render_template('onboarding.html')
 
-@app.route('/login')
-def login():
-    return render_template('login.html')
-
 @app.route('/get_questions')
 def get_questions():
     questions_collection = list(db.Assessment.find({}, {"_id": 0})) 
@@ -149,72 +142,6 @@ def get_patterns():
     patterns_collection = list(db.Pattern.find({}, {"_id": 0})) 
     shuffled_patterns = random.sample(patterns_collection, min(2, len(patterns_collection)))
     return jsonify(shuffled_patterns)
-
-@app.route("/registerapi", methods=["POST"])
-def registerapi():
-    data = request.json
-    email = data.get("email")
-    username = data.get("username")
-    password = data.get("password")
-    name = data.get("name")
-    age = data.get("age")
-    gender = data.get("gender")
-    placeofbirth = data.get("placeofbirth")
-
-    if users_collection.find_one({"email": email}):
-        return jsonify({"message": "Email already registered"}), 400
-
-    user_data = {
-        "username": username,
-        "email": email,
-        "password": password,
-        "name": name,
-        "age": age,
-        "gender": gender,
-        "placeofbirth": placeofbirth
-    }
-    
-    users_collection.insert_one(user_data)
-    return jsonify({"message": "Registration successful"}), 201
-
-@app.route("/loginapi", methods=["POST"])
-def loginapi():
-    data = request.json
-    email = data.get("email")
-    password = data.get("password")
-
-    user = users_collection.find_one({"email": email})
-    if not user or user["password"] != password:
-        return jsonify({"message": "Invalid email or password"}), 401
-
-    return jsonify({"message": "Login successful", "username": user["username"]}), 200
-
-
-@app.route("/submit_scores", methods=["POST"])
-def submit_scores():
-    data = request.json
-    assessment = data.get("assessment", 0)
-    pattern = data.get("pattern", 0)
-    reading = data.get("reading", 0)
-    existing_scores = scores_collection.find_one({"id": "abc123"})
-
-    if existing_scores:
-        updated_scores = {
-            "assessment": max(existing_scores["assessment"], assessment),
-            "pattern": max(existing_scores["pattern"], pattern),
-            "reading": max(existing_scores["reading"], reading)
-        }
-        scores_collection.update_one({"id": "abc123"}, {"$set": updated_scores})
-    else:
-        scores_collection.insert_one({
-            "id": "abc123",
-            "assessment": assessment,
-            "pattern": pattern,
-            "reading": reading
-        })
-
-    return jsonify({"message": "Scores updated successfully"}), 200
-
 
 if __name__ == '__main__':
     app.run(debug=True)

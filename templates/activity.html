@@ -35,16 +35,26 @@
     </div>
 
     <script>
+        if (!localStorage.getItem("scores")) {
+            let defaultScores = {
+                assessment: 0,
+                pattern: 0,
+                reading: 0
+            };
+            localStorage.setItem("scores", JSON.stringify(defaultScores));
+        }
         $(document).ready(function () {
             $("#generate-report-btn").click(function () {
                 $("#status-message")
                     .text("Generating report... Please wait.")
                     .removeClass("text-green-600 text-red-600")
                     .addClass("text-blue-600"); 
-    
+                let scores = localStorage.getItem("scores") ? JSON.parse(localStorage.getItem("scores")) : { assessment: 0, pattern: 0, reading: 0 };
                 $.ajax({
                     url: "/generate-report",
-                    type: "GET",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(scores),
                     xhrFields: {
                         responseType: 'blob'
                     },

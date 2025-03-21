@@ -124,22 +124,10 @@
 
                     $("#quiz-container").hide();
                     $("#result-page").show();
-                    $.ajax({
-                        url: "/submit_scores",
-                        type: "POST",
-                        contentType: "application/json",
-                        data: JSON.stringify({
-                            assessment: 0, 
-                            pattern: score,
-                            reading: 0
-                        }),
-                        success: function(response) {
-                            console.log(response.message);
-                        },
-                        error: function(error) {
-                            console.log("Error:", error);
-                        }
-                    });
+                    let scores = localStorage.getItem("scores");
+                    scores = scores ? JSON.parse(scores) : { assessment: 0, pattern: 0, reading: 0 }
+                    scores["pattern"] = Math.max(scores["pattern"], score);  
+                    localStorage.setItem("scores", JSON.stringify(scores));  
 
                     $("#score-text").text(`You scored ${score} out of ${questions.length}`);
                 }
