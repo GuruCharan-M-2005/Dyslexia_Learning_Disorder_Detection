@@ -134,13 +134,13 @@ def onboarding():
 @app.route('/get_questions')
 def get_questions():
     questions_collection = list(db.Assessment.find({}, {"_id": 0})) 
-    shuffled_questions = random.sample(questions_collection, min(2, len(questions_collection)))  
+    shuffled_questions = random.sample(questions_collection, min(20, len(questions_collection)))  
     return jsonify(shuffled_questions)
 
 @app.route('/get_patterns')
 def get_patterns():
     patterns_collection = list(db.Pattern.find({}, {"_id": 0})) 
-    shuffled_patterns = random.sample(patterns_collection, min(2, len(patterns_collection)))
+    shuffled_patterns = random.sample(patterns_collection, min(20, len(patterns_collection)))
     return jsonify(shuffled_patterns)
 
 if __name__ == '__main__':
