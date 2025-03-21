@@ -37,7 +37,6 @@ Download and install MongoDB from [MongoDB Official Website](https://www.mongodb
 #### Collections Overview
 - **Assessment**: Stores assessment-related data.
 - **Pattern**: Contains patterns for analysis.
-- **User**: Holds user-related details.
 
 ``` 
  Download json files from github repo and add them in MongoDB database.
